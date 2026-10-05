@@ -1,0 +1,1181 @@
+<!-- ========================================= -->
+<!-- SERVICES PAGE -->
+<!-- ========================================= -->
+
+<main
+  class="services-page"
+
+  (mousemove)="onMouseMove($event)"
+
+  (mouseleave)="resetParallax()"
+
+  (window:scroll)="onWindowScroll()"
+>
+
+
+  <!-- ========================================= -->
+  <!-- SCROLL PROGRESS -->
+  <!-- ========================================= -->
+
+  <div
+    class="scroll-progress"
+    [style.width.%]="scrollProgress"
+  ></div>
+
+
+  <!-- ========================================= -->
+  <!-- HERO -->
+  <!-- ========================================= -->
+
+  <section class="services-hero">
+
+
+    <!-- BACKGROUND -->
+
+    <div class="services-grid"></div>
+
+    <div class="services-noise"></div>
+
+    <div class="services-glow services-glow-red"></div>
+
+    <div class="services-glow services-glow-pink"></div>
+
+    <div class="services-glow services-glow-orange"></div>
+
+
+    <!-- ===================================== -->
+    <!-- 3D OBJECT -->
+    <!-- ===================================== -->
+
+    <div
+      class="services-3d-scene"
+
+      [style.transform]="
+        'rotateX(' +
+        (-mouseY * 6) +
+        'deg) rotateY(' +
+        (mouseX * 8) +
+        'deg)'
+      "
+    >
+
+      <div class="services-orb">
+
+        <div class="services-orb-ring ring-one"></div>
+
+        <div class="services-orb-ring ring-two"></div>
+
+        <div class="services-orb-ring ring-three"></div>
+
+        <div class="services-orb-core"></div>
+
+      </div>
+
+
+      <div class="services-floating-shape shape-one"></div>
+
+      <div class="services-floating-shape shape-two"></div>
+
+      <div class="services-floating-shape shape-three"></div>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- HERO CONTENT -->
+    <!-- ===================================== -->
+
+    <div class="services-hero-content">
+
+
+      <div class="services-eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        <span>
+          {{ 'OUR CAPABILITIES' | translate:'خدماتنا' }}
+        </span>
+
+        <span class="eyebrow-line"></span>
+
+        <span>
+          01 / 08
+        </span>
+
+      </div>
+
+
+      <h1 class="services-title">
+
+        {{ 'WE BUILD' | translate:'نصنع' }}
+
+        <br />
+
+        <span>
+          {{ 'BRANDS' | translate:'علامات تجارية' }}
+        </span>
+
+        <br />
+
+        {{ 'THAT MOVE.' | translate:'تترك تأثيرًا.' }}
+
+      </h1>
+
+
+      <p class="services-hero-description">
+
+        {{
+          'From strategy and content to media buying, branding and technology — we build everything your brand needs to grow.'
+          | translate:'من الاستراتيجية وصناعة المحتوى إلى الميديا باينج والبراندينج والتكنولوجيا — بنوفر كل ما تحتاجه علامتك التجارية للنمو.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="services-hero-button"
+      >
+
+        <span>
+          {{ 'Start a project' | translate:'ابدأ مشروعك' }}
+        </span>
+
+        <span class="button-icon">
+
+          <i
+            class="fa-solid fa-arrow-down"
+          ></i>
+
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="services-scroll">
+
+      <span>
+        {{ 'EXPLORE SERVICES' | translate:'استكشف الخدمات' }}
+      </span>
+
+      <i class="fa-solid fa-arrow-down"></i>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- INTRO -->
+  <!-- ========================================= -->
+
+  <section class="services-intro">
+
+
+    <div
+      #reveal
+      class="section-number reveal"
+    >
+      02 / 08
+    </div>
+
+
+    <div class="services-intro-layout">
+
+
+      <div
+        #reveal
+        class="intro-label reveal"
+      >
+
+        <span></span>
+
+        {{
+          'WHAT WE DO'
+          | translate:'ماذا نقدم'
+        }}
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-title reveal reveal-delay-one"
+      >
+
+        <h2>
+
+          {{
+            'ONE TEAM.'
+            | translate:'فريق واحد.'
+          }}
+
+          <br />
+
+          {{
+            'EVERYTHING'
+            | translate:'كل ما'
+          }}
+
+          <span>
+            {{
+              'YOU NEED.'
+              | translate:'تحتاجه.'
+            }}
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-text reveal reveal-delay-two"
+      >
+
+        <p>
+
+          {{
+            'Benzed combines creativity, strategy, technology and performance under one roof.'
+            | translate:'تجمع Benzed بين الإبداع والاستراتيجية والتكنولوجيا والأداء في مكان واحد.'
+          }}
+
+        </p>
+
+
+        <p>
+
+          {{
+            'We do not just deliver services. We build complete digital experiences around your brand.'
+            | translate:'نحن لا نقدم خدمات منفصلة فقط، بل نبني تجربة رقمية متكاملة حول علامتك التجارية.'
+          }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- SERVICES LIST -->
+  <!-- ========================================= -->
+
+  <section class="services-list">
+
+
+    <div class="services-list-header">
+
+      <div
+        #reveal
+        class="reveal"
+      >
+
+        <span class="section-kicker">
+
+          {{
+            'WHAT WE OFFER'
+            | translate:'ماذا نقدم'
+          }}
+
+        </span>
+
+        <h2>
+
+          {{
+            'OUR'
+            | translate:'خدماتنا'
+          }}
+
+          <span>
+            {{
+              'SERVICES.'
+              | translate:'بكل تفاصيلها.'
+            }}
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <span class="section-number">
+        03 / 08
+      </span>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 01 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-red reveal"
+    >
+
+      <div class="service-number">
+        01
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-hashtag"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          SOCIAL
+        </span>
+
+        <h3>
+
+          {{
+            'SOCIAL MEDIA'
+            | translate:'إدارة السوشيال ميديا'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'We manage your social presence from strategy and content calendars to community management and daily execution.'
+            | translate:'ندير حضورك على السوشيال ميديا بداية من الاستراتيجية وخطط المحتوى وحتى إدارة المجتمع والتنفيذ اليومي.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Strategy
+          </span>
+
+          <span>
+            Content
+          </span>
+
+          <span>
+            Community
+          </span>
+
+          <span>
+            Management
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 02 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-pink reveal reveal-delay-one"
+    >
+
+      <div class="service-number">
+        02
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          PERFORMANCE
+        </span>
+
+        <h3>
+
+          {{
+            'MEDIA BUYING'
+            | translate:'الميديا باينج'
+          }}
+
+          <br />
+
+          & ADS
+
+        </h3>
+
+        <p>
+
+          {{
+            'Data-driven campaigns focused on reach, leads, conversions and measurable business growth.'
+            | translate:'حملات إعلانية تعتمد على البيانات وتركز على الوصول والعملاء والتحويلات والنمو القابل للقياس.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Meta Ads
+          </span>
+
+          <span>
+            Google Ads
+          </span>
+
+          <span>
+            Retargeting
+          </span>
+
+          <span>
+            Analytics
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 03 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-orange reveal reveal-delay-two"
+    >
+
+      <div class="service-number">
+        03
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-video"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          CREATIVE
+        </span>
+
+        <h3>
+
+          {{
+            'CONTENT'
+            | translate:'صناعة'
+          }}
+
+          <br />
+
+          {{
+            'CREATION'
+            | translate:'المحتوى'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'Reels, photography, scripts, concepts and visual storytelling designed to make people stop and watch.'
+            | translate:'ريلز وتصوير وسكريبتات وأفكار وستوري تيلنج بصري مصمم لجذب الانتباه وتحقيق التفاعل.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Reels
+          </span>
+
+          <span>
+            Photography
+          </span>
+
+          <span>
+            Scripts
+          </span>
+
+          <span>
+            Production
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 04 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-purple reveal reveal-delay-three"
+    >
+
+      <div class="service-number">
+        04
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-pen-nib"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          VISUAL
+        </span>
+
+        <h3>
+
+          {{
+            'GRAPHIC DESIGN'
+            | translate:'التصميم الجرافيكي'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'Social media designs, campaign visuals, ads, carousels and complete visual systems.'
+            | translate:'تصميمات السوشيال ميديا والحملات والإعلانات والكارويسيل والأنظمة البصرية المتكاملة.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Social
+          </span>
+
+          <span>
+            Ads
+          </span>
+
+          <span>
+            Campaigns
+          </span>
+
+          <span>
+            Visuals
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 05 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-dark reveal reveal-delay-four"
+    >
+
+      <div class="service-number">
+        05
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-shapes"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          IDENTITY
+        </span>
+
+        <h3>
+
+          {{
+            'BRANDING'
+            | translate:'البراندينج'
+          }}
+
+          <br />
+
+          {{
+            '& VISUAL IDENTITY'
+            | translate:'والهوية البصرية'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'We build memorable brands with a clear personality, visual language and strong positioning.'
+            | translate:'نبني علامات تجارية مميزة بشخصية واضحة ولغة بصرية قوية ومكانة واضحة في السوق.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Logo
+          </span>
+
+          <span>
+            Identity
+          </span>
+
+          <span>
+            Guidelines
+          </span>
+
+          <span>
+            Strategy
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 06 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-gradient reveal"
+    >
+
+      <div class="service-number">
+        06
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-bolt"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          DIGITAL
+        </span>
+
+        <h3>
+
+          {{
+            'WEB & SOFTWARE'
+            | translate:'المواقع والبرمجيات'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'Websites, landing pages, digital platforms and software solutions that turn your ideas into real products.'
+            | translate:'مواقع ولاندنج بيدج ومنصات رقمية وحلول برمجية نحول بها أفكارك إلى منتجات حقيقية.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Websites
+          </span>
+
+          <span>
+            Web Apps
+          </span>
+
+          <span>
+            Platforms
+          </span>
+
+          <span>
+            Software
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 07 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-red reveal reveal-delay-one"
+    >
+
+      <div class="service-number">
+        07
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-bullhorn"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          DIGITAL
+        </span>
+
+        <h3>
+
+          {{
+            'DIGITAL MARKETING'
+            | translate:'التسويق الرقمي'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'Integrated digital strategies that connect content, advertising, social media and business goals.'
+            | translate:'استراتيجيات تسويق رقمية متكاملة تربط المحتوى والإعلانات والسوشيال ميديا بأهداف البيزنس.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Strategy
+          </span>
+
+          <span>
+            SEO
+          </span>
+
+          <span>
+            Ads
+          </span>
+
+          <span>
+            Growth
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICE 08 -->
+    <!-- ===================================== -->
+
+    <article
+      #reveal
+      class="big-service service-pink reveal reveal-delay-two"
+    >
+
+      <div class="service-number">
+        08
+      </div>
+
+
+      <div class="service-icon">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+      </div>
+
+
+      <div class="service-main">
+
+        <span class="service-category">
+          CREATIVE
+        </span>
+
+        <h3>
+
+          {{
+            'CREATIVE CAMPAIGNS'
+            | translate:'الحملات الإبداعية'
+          }}
+
+        </h3>
+
+        <p>
+
+          {{
+            'Big ideas transformed into campaigns that people remember, talk about and share.'
+            | translate:'نحول الأفكار الكبيرة إلى حملات إبداعية يتذكرها الناس ويتحدثون عنها ويشاركونها.'
+          }}
+
+        </p>
+
+
+        <div class="service-tags">
+
+          <span>
+            Concepts
+          </span>
+
+          <span>
+            Campaigns
+          </span>
+
+          <span>
+            Storytelling
+          </span>
+
+          <span>
+            Activation
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-arrow">
+        ↗
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- PROCESS -->
+  <!-- ========================================= -->
+
+  <section class="services-process">
+
+
+    <div
+      #reveal
+      class="process-heading reveal"
+    >
+
+      <span class="section-kicker">
+
+        {{
+          'HOW WE WORK'
+          | translate:'طريقة شغلنا'
+        }}
+
+      </span>
+
+      <h2>
+
+        {{
+          'IDEA'
+          | translate:'فكرة'
+        }}
+
+        <span>→</span>
+
+        {{
+          'STRATEGY'
+          | translate:'استراتيجية'
+        }}
+
+        <span>→</span>
+
+        {{
+          'IMPACT'
+          | translate:'تأثير'
+        }}
+
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+      <div
+        #reveal
+        class="process-item reveal"
+      >
+
+        <span>
+          01
+        </span>
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <h3>
+          {{ 'DISCOVER' | translate:'اكتشف' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We understand your business, audience and goals.'
+            | translate:'نفهم البيزنس والجمهور والأهداف.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-one"
+      >
+
+        <span>
+          02
+        </span>
+
+        <i class="fa-solid fa-chess"></i>
+
+        <h3>
+          {{ 'STRATEGIZE' | translate:'نخطط' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We build the strategy and creative direction.'
+            | translate:'نبني الاستراتيجية والاتجاه الإبداعي.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-two"
+      >
+
+        <span>
+          03
+        </span>
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <h3>
+          {{ 'CREATE' | translate:'نبدع' }}
+        </h3>
+
+        <p>
+
+          {{
+            'Our team turns the strategy into powerful creative work.'
+            | translate:'فريقنا يحول الاستراتيجية إلى أعمال إبداعية قوية.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-three"
+      >
+
+        <span>
+          04
+        </span>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h3>
+          {{ 'GROW' | translate:'ننمو' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We measure, optimize and keep pushing the results.'
+            | translate:'نقيس ونطور ونستمر في تحسين النتائج.'
+          }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- CTA -->
+  <!-- ========================================= -->
+
+  <section class="services-cta">
+
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-ring ring-one"></div>
+
+    <div class="cta-ring ring-two"></div>
+
+
+    <div
+      #reveal
+      class="cta-content reveal"
+    >
+
+      <span class="section-kicker">
+        {{ 'READY?' | translate:'جاهز؟' }}
+      </span>
+
+
+      <h2>
+
+        {{
+          'LET’S BUILD'
+          | translate:'يلا نبني'
+        }}
+
+        <br />
+
+        <span>
+          {{
+            'SOMETHING BIG.'
+            | translate:'حاجة كبيرة.'
+          }}
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        {{
+          'Tell us about your idea and let’s turn it into something people remember.'
+          | translate:'احكيلنا عن فكرتك ونحولها معًا إلى شيء الناس تفتكره.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="cta-button"
+      >
+
+        <span>
+          {{ 'Start a project' | translate:'ابدأ مشروعك' }}
+        </span>
+
+        <i
+          class="fa-solid fa-arrow-up-right-from-square"
+        ></i>
+
+      </a>
+
+    </div>
+
+
+    <span class="cta-index">
+      08 / 08
+    </span>
+
+  </section>
+
+</main>

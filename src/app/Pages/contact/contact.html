@@ -1,0 +1,787 @@
+<main
+  class="contact-page"
+
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="resetParallax()"
+  (window:scroll)="onWindowScroll()"
+>
+
+  <!-- =====================================================
+       SCROLL PROGRESS
+  ===================================================== -->
+
+  <div
+    class="scroll-progress"
+    [style.--scroll-progress]="scrollProgress"
+  ></div>
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section class="contact-hero">
+
+    <div class="contact-grid"></div>
+
+    <div class="contact-noise"></div>
+
+    <div
+      class="contact-glow contact-glow-red"
+    ></div>
+
+    <div
+      class="contact-glow contact-glow-pink"
+    ></div>
+
+
+    <!-- 3D SCENE -->
+
+    <div
+      class="contact-3d-scene"
+
+      [style.--mouse-x]="mouseX"
+      [style.--mouse-y]="mouseY"
+    >
+
+      <div class="contact-orb">
+
+        <div class="contact-orb-inner"></div>
+
+      </div>
+
+      <div
+        class="contact-ring ring-one"
+      ></div>
+
+      <div
+        class="contact-ring ring-two"
+      ></div>
+
+      <div
+        class="contact-ring ring-three"
+      ></div>
+
+      <div class="contact-orb-dot"></div>
+
+      <div
+        class="contact-floating-shape shape-one"
+      ></div>
+
+      <div
+        class="contact-floating-shape shape-two"
+      ></div>
+
+      <div
+        class="contact-floating-shape shape-three"
+      ></div>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="contact-hero-content">
+
+      <div class="contact-eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        <span>
+          {{
+            'LET’S TALK'
+            | translate:'خلينا نتكلم'
+          }}
+        </span>
+
+        <span class="eyebrow-line"></span>
+
+      </div>
+
+
+      <h1 class="contact-title">
+
+        {{
+          'LET’S'
+          | translate:'خلينا'
+        }}
+
+        <span>
+          {{
+            'CREATE.'
+            | translate:'نبدأ.'
+          }}
+        </span>
+
+      </h1>
+
+
+      <p class="contact-hero-description">
+
+        {{
+          'Have a project, an idea or just a question? Tell us what you have in mind.'
+          | translate:
+          'عندك مشروع أو فكرة أو حتى مجرد سؤال؟ احكيلنا إيه اللي في دماغك.'
+        }}
+
+      </p>
+
+    </div>
+
+
+    <div class="contact-scroll">
+
+      {{
+        'START A CONVERSATION'
+        | translate:'ابدأ محادثة'
+      }}
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONTACT AREA
+  ===================================================== -->
+
+  <section class="contact-section">
+
+    <!-- LEFT -->
+
+    <div
+      class="contact-info reveal"
+      #reveal
+    >
+
+      <span class="section-number">
+        01
+      </span>
+
+
+      <span class="section-kicker">
+
+        {{
+          'CONTACT DETAILS'
+          | translate:'بيانات التواصل'
+        }}
+
+      </span>
+
+
+      <h2>
+
+        {{
+          'TELL US EVERYTHING.'
+          | translate:'احكيلنا كل حاجة.'
+        }}
+
+      </h2>
+
+
+      <p class="contact-info-text">
+
+        {{
+          'The more we know, the better we can understand your vision and build the right solution.'
+          | translate:
+          'كل ما نعرف عن فكرتك أكتر، هنقدر نفهم رؤيتك ونبني الحل المناسب ليك.'
+        }}
+
+      </p>
+
+
+      <!-- EMAIL -->
+
+      <a
+        class="contact-detail"
+        href="mailto:benzed.me@gmail.com"
+      >
+
+        <span class="detail-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+
+        <span class="detail-content">
+
+          <small>
+            {{
+              'EMAIL'
+              | translate:'البريد الإلكتروني'
+            }}
+          </small>
+
+          <strong>
+            benzed.me@gmail.com
+          </strong>
+
+        </span>
+
+      </a>
+
+
+      <!-- PHONE -->
+
+      <a
+        class="contact-detail"
+        href="tel:+201011287641"
+      >
+
+        <span class="detail-icon">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+
+        <span class="detail-content">
+
+          <small>
+            {{
+              'PHONE'
+              | translate:'الهاتف'
+            }}
+          </small>
+
+          <strong>
+            +20 101 128 7641
+          </strong>
+
+        </span>
+
+      </a>
+
+
+      <!-- LOCATION -->
+
+      <div class="contact-detail">
+
+        <span class="detail-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+
+        <span class="detail-content">
+
+          <small>
+            {{
+              'LOCATION'
+              | translate:'الموقع'
+            }}
+          </small>
+
+          <strong>
+            {{
+              'Maadi, Cairo, Egypt'
+              | translate:'المعادي، القاهرة، مصر'
+            }}
+          </strong>
+
+        </span>
+
+      </div>
+
+
+      <!-- SOCIAL -->
+
+      <div class="contact-socials">
+
+        <a
+          href="https://www.instagram.com/benzed.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+
+        <a
+          href="https://facebook.com/share/1Gtmy8zTbP"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div
+      class="contact-form-wrapper reveal reveal-delay-one"
+      #reveal
+    >
+
+      <div class="form-header">
+
+        <span>
+          {{
+            'START A PROJECT'
+            | translate:'ابدأ مشروع'
+          }}
+        </span>
+
+        <span>
+          01 / 06
+        </span>
+
+      </div>
+
+
+      <!-- SUCCESS -->
+
+      @if (isSubmitted) {
+
+        <div class="form-success">
+
+          <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+          </div>
+
+          <h3>
+
+            {{
+              'MESSAGE SENT.'
+              | translate:'تم إرسال الرسالة.'
+            }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Thanks for reaching out. We will get back to you soon.'
+              | translate:
+              'شكرًا لتواصلك معانا. هنرجعلك قريب.'
+            }}
+
+          </p>
+
+        </div>
+
+      } @else {
+
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="submitForm()"
+          novalidate
+        >
+
+          <!-- NAME + EMAIL -->
+
+          <div class="form-row">
+
+            <div class="form-field">
+
+              <label for="name">
+
+                {{
+                  'YOUR NAME'
+                  | translate:'اسمك'
+                }}
+
+              </label>
+
+              <input
+                id="name"
+                type="text"
+                formControlName="name"
+                autocomplete="name"
+                placeholder="John Doe"
+              />
+
+              @if (
+                isInvalid('name')
+              ) {
+
+                <small class="error-message">
+
+                  {{
+                    'Please enter your name.'
+                    | translate:'اكتب اسمك من فضلك.'
+                  }}
+
+                </small>
+
+              }
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="email">
+
+                {{
+                  'EMAIL'
+                  | translate:'الإيميل'
+                }}
+
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                autocomplete="email"
+                placeholder="hello@example.com"
+              />
+
+              @if (
+                isInvalid('email')
+              ) {
+
+                <small class="error-message">
+
+                  {{
+                    'Enter a valid email.'
+                    | translate:'اكتب إيميل صحيح.'
+                  }}
+
+                </small>
+
+              }
+
+            </div>
+
+          </div>
+
+
+          <!-- PHONE + COMPANY -->
+
+          <div class="form-row">
+
+            <div class="form-field">
+
+              <label for="phone">
+
+                {{
+                  'PHONE'
+                  | translate:'رقم الهاتف'
+                }}
+
+              </label>
+
+              <input
+                id="phone"
+                type="tel"
+                formControlName="phone"
+                autocomplete="tel"
+                placeholder="+20 100 000 0000"
+              />
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="company">
+
+                {{
+                  'COMPANY'
+                  | translate:'الشركة'
+                }}
+
+              </label>
+
+              <input
+                id="company"
+                type="text"
+                formControlName="company"
+                autocomplete="organization"
+                placeholder="Your company"
+              />
+
+            </div>
+
+          </div>
+
+
+          <!-- SERVICE -->
+
+          <div class="form-field">
+
+            <label for="service">
+
+              {{
+                'WHAT DO YOU NEED?'
+                | translate:'محتاج إيه؟'
+              }}
+
+            </label>
+
+            <select
+              id="service"
+              formControlName="service"
+            >
+
+              <option value="">
+                {{
+                  'Select a service'
+                  | translate:'اختار الخدمة'
+                }}
+              </option>
+
+              <option value="social-media">
+                {{
+                  'Social Media Management'
+                  | translate:'إدارة السوشيال ميديا'
+                }}
+              </option>
+
+              <option value="media-buying">
+                {{
+                  'Media Buying & Ads'
+                  | translate:'الميديا باينج والإعلانات'
+                }}
+              </option>
+
+              <option value="content">
+                {{
+                  'Content Creation'
+                  | translate:'صناعة المحتوى'
+                }}
+              </option>
+
+              <option value="branding">
+                {{
+                  'Branding & Graphic Design'
+                  | translate:'البراندينج والتصميم'
+                }}
+              </option>
+
+              <option value="digital-marketing">
+                {{
+                  'Digital Marketing'
+                  | translate:'التسويق الرقمي'
+                }}
+              </option>
+
+              <option value="web-software">
+                {{
+                  'Web & Software'
+                  | translate:'المواقع والبرمجيات'
+                }}
+              </option>
+
+              <option value="creative-campaign">
+                {{
+                  'Creative Campaign'
+                  | translate:'حملة إبداعية'
+                }}
+              </option>
+
+              <option value="other">
+                {{
+                  'Something else'
+                  | translate:'حاجة تانية'
+                }}
+              </option>
+
+            </select>
+
+            @if (
+              isInvalid('service')
+            ) {
+
+              <small class="error-message">
+
+                {{
+                  'Please select a service.'
+                  | translate:'اختار الخدمة من فضلك.'
+                }}
+
+              </small>
+
+            }
+
+          </div>
+
+
+          <!-- BUDGET -->
+
+          <div class="form-field">
+
+            <label for="budget">
+
+              {{
+                'ESTIMATED BUDGET'
+                | translate:'الميزانية المتوقعة'
+              }}
+
+            </label>
+
+            <select
+              id="budget"
+              formControlName="budget"
+            >
+
+              <option value="">
+                {{
+                  'Select a range'
+                  | translate:'اختار الرينج'
+                }}
+              </option>
+
+              <option value="under-10k">
+                {{
+                  'Under 10,000 EGP'
+                  | translate:'أقل من 10,000 جنيه'
+                }}
+              </option>
+
+              <option value="10k-25k">
+                {{
+                  '10,000 — 25,000 EGP'
+                  | translate:'10,000 — 25,000 جنيه'
+                }}
+              </option>
+
+              <option value="25k-50k">
+                {{
+                  '25,000 — 50,000 EGP'
+                  | translate:'25,000 — 50,000 جنيه'
+                }}
+              </option>
+
+              <option value="50k-plus">
+                {{
+                  '50,000+ EGP'
+                  | translate:'أكثر من 50,000 جنيه'
+                }}
+              </option>
+
+              <option value="not-sure">
+                {{
+                  'Not sure yet'
+                  | translate:'لسه مش محدد'
+                }}
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <div class="form-field">
+
+            <label for="message">
+
+              {{
+                'TELL US ABOUT YOUR PROJECT'
+                | translate:'احكيلنا عن مشروعك'
+              }}
+
+            </label>
+
+            <textarea
+              id="message"
+              rows="6"
+              formControlName="message"
+              placeholder="Tell us about your idea..."
+            ></textarea>
+
+            @if (
+              isInvalid('message')
+            ) {
+
+              <small class="error-message">
+
+                {{
+                  'Tell us a little more about your project.'
+                  | translate:
+                  'احكيلنا تفاصيل أكتر عن مشروعك.'
+                }}
+
+              </small>
+
+            }
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="submit-button"
+          >
+
+            <span>
+
+              {{
+                'SEND MESSAGE'
+                | translate:'إرسال الرسالة'
+              }}
+
+            </span>
+
+            <span class="submit-icon">
+
+              <i
+                class="fa-solid fa-arrow-up-right-from-square"
+              ></i>
+
+            </span>
+
+          </button>
+
+        </form>
+
+      }
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BOTTOM CTA
+  ===================================================== -->
+
+  <section class="contact-bottom">
+
+    <div
+      class="bottom-content reveal"
+      #reveal
+    >
+
+      <span class="section-kicker">
+
+        {{
+          'OR JUST SAY HI'
+          | translate:'أو حتى قولنا هاي'
+        }}
+
+      </span>
+
+
+      <a
+        href="mailto:benzed.me@gmail.com"
+        class="big-email"
+      >
+
+        benzed.me@gmail.com
+
+      </a>
+
+
+      <p>
+
+        {{
+          'We usually reply within one business day.'
+          | translate:
+          'عادةً بنرد خلال يوم عمل واحد.'
+        }}
+
+      </p>
+
+    </div>
+
+  </section>
+
+</main>

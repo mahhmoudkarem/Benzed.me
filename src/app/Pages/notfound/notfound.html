@@ -1,0 +1,228 @@
+<main
+  class="notfound-page"
+
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="resetParallax()"
+>
+
+  <!-- =====================================================
+       BACKGROUND
+  ===================================================== -->
+
+  <div class="notfound-grid"></div>
+
+  <div class="notfound-noise"></div>
+
+  <div
+    class="notfound-glow notfound-glow-red"
+  ></div>
+
+  <div
+    class="notfound-glow notfound-glow-pink"
+  ></div>
+
+
+  <!-- =====================================================
+       TOP LABEL
+  ===================================================== -->
+
+  <div class="notfound-top">
+
+    <span class="top-index">
+      404
+    </span>
+
+    <span>
+      {{
+        'PAGE NOT FOUND'
+        | translate:'الصفحة غير موجودة'
+      }}
+    </span>
+
+  </div>
+
+
+  <!-- =====================================================
+       3D SCENE
+  ===================================================== -->
+
+  <div
+    class="notfound-scene"
+
+    [style.--mouse-x]="mouseX"
+    [style.--mouse-y]="mouseY"
+  >
+
+    <div class="notfound-orb">
+
+      <div class="notfound-orb-inner"></div>
+
+    </div>
+
+
+    <div class="notfound-ring ring-one"></div>
+
+    <div class="notfound-ring ring-two"></div>
+
+    <div class="notfound-ring ring-three"></div>
+
+
+    <div class="notfound-dot"></div>
+
+
+    <div
+      class="notfound-shape shape-one"
+    ></div>
+
+    <div
+      class="notfound-shape shape-two"
+    ></div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ===================================================== -->
+
+  <section class="notfound-content">
+
+    <div
+      class="notfound-label reveal"
+      #reveal
+    >
+
+      <span class="label-dot"></span>
+
+      <span>
+        {{
+          'ERROR 404'
+          | translate:'خطأ 404'
+        }}
+      </span>
+
+    </div>
+
+
+    <h1
+      class="notfound-number reveal reveal-delay-one"
+      #reveal
+    >
+
+      <span>4</span>
+
+      <span class="zero">
+
+        0
+
+        <span class="zero-line"></span>
+
+      </span>
+
+      <span>4</span>
+
+    </h1>
+
+
+    <h2
+      class="notfound-title reveal reveal-delay-two"
+      #reveal
+    >
+
+      {{
+        'LOST IN THE DIGITAL VOID.'
+        | translate:'تايهين في الفراغ الرقمي.'
+      }}
+
+    </h2>
+
+
+    <p
+      class="notfound-description reveal reveal-delay-three"
+      #reveal
+    >
+
+      {{
+        'The page you are looking for does not exist, has been moved, or never existed in the first place.'
+        | translate:
+        'الصفحة اللي بتدور عليها مش موجودة، ممكن تكون اتمسحت أو اتنقلت أو عمرها ما كانت موجودة.'
+      }}
+
+    </p>
+
+
+    <!-- =================================================
+         ACTIONS
+    ================================================= -->
+
+    <div
+      class="notfound-actions reveal reveal-delay-four"
+      #reveal
+    >
+
+      <a
+        routerLink="/"
+        class="home-button"
+      >
+
+        <span>
+
+          {{
+            'BACK TO HOME'
+            | translate:'العودة للرئيسية'
+          }}
+
+        </span>
+
+        <span class="button-icon">
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+          ></i>
+
+        </span>
+
+      </a>
+
+
+      <a
+        routerLink="/contact"
+        class="contact-button"
+      >
+
+        {{
+          'CONTACT US'
+          | translate:'تواصل معنا'
+        }}
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BOTTOM
+  ===================================================== -->
+
+  <div class="notfound-bottom">
+
+    <span>
+      BENZED
+    </span>
+
+    <span>
+      {{
+        'CREATIVE DIGITAL AGENCY'
+        | translate:'وكالة إبداعية رقمية'
+      }}
+    </span>
+
+    <span>
+      404 / 404
+    </span>
+
+  </div>
+
+</main>

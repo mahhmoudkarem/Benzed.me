@@ -1,0 +1,1263 @@
+<!-- ========================================= -->
+<!-- HOME -->
+<!-- ========================================= -->
+
+<main
+  class="home"
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="resetParallax()"
+  (window:scroll)="onWindowScroll()"
+>
+
+  <!-- ========================================= -->
+  <!-- SCROLL PROGRESS -->
+  <!-- ========================================= -->
+
+  <div
+    class="scroll-progress"
+    [style.width.%]="scrollProgress"
+  ></div>
+
+
+  <!-- ========================================= -->
+  <!-- HERO -->
+  <!-- ========================================= -->
+
+  <section class="hero">
+
+    <!-- BACKGROUND -->
+
+    <div class="hero-noise"></div>
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow hero-glow-red"></div>
+
+    <div class="hero-glow hero-glow-pink"></div>
+
+    <div class="hero-glow hero-glow-orange"></div>
+
+
+    <!-- ===================================== -->
+    <!-- 3D OBJECT -->
+    <!-- ===================================== -->
+
+    <div
+      class="hero-3d-scene"
+      [style.transform]="
+        'rotateX(' + (-mouseY * 7) + 'deg) rotateY(' + (mouseX * 9) + 'deg)'
+      "
+    >
+
+      <div class="hero-orb">
+
+        <div class="orb-ring orb-ring-one"></div>
+
+        <div class="orb-ring orb-ring-two"></div>
+
+        <div class="orb-ring orb-ring-three"></div>
+
+        <div class="orb-core"></div>
+
+      </div>
+
+
+      <div class="floating-shape shape-one"></div>
+
+      <div class="floating-shape shape-two"></div>
+
+      <div class="floating-shape shape-three"></div>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- HERO CONTENT -->
+    <!-- ===================================== -->
+
+    <div class="hero-content">
+
+      <!-- EYEBROW -->
+
+      <div class="hero-eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        <span>
+          {{ 'CREATIVE DIGITAL AGENCY' | translate:'وكالة إبداعية رقمية' }}
+        </span>
+
+        <span class="eyebrow-line"></span>
+
+        <span>
+          {{ 'CAIRO — EGYPT' | translate:'القاهرة — مصر' }}
+        </span>
+
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h1 class="hero-title">
+
+        <span class="hero-title-line hero-title-line-one">
+
+          {{ 'WE' | translate:'نحن' }}
+
+        </span>
+
+
+        <span class="hero-title-line hero-title-line-two">
+
+          {{ 'MAKE' | translate:'نصنع' }}
+
+          <span class="hero-title-accent">
+            {{ 'BRANDS' | translate:'علامات تجارية' }}
+          </span>
+
+        </span>
+
+
+        <span class="hero-title-line hero-title-line-three">
+
+          <span class="outline-text">
+            {{ 'IMPOSSIBLE' | translate:'مستحيل' }}
+          </span>
+
+          {{ 'TO IGNORE.' | translate:'أن يتم تجاهلها.' }}
+
+        </span>
+
+      </h1>
+
+
+      <!-- DESCRIPTION -->
+
+      <div class="hero-bottom">
+
+        <p class="hero-description">
+
+          {{
+            'We create bold identities, content, campaigns and digital experiences that make brands impossible to miss.'
+            | translate:'نصنع هويات جريئة ومحتوى وحملات وتجارب رقمية تجعل علامتك التجارية مستحيل تجاهلها.'
+          }}
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            routerLink="/contact"
+            class="hero-main-button"
+          >
+
+            <span>
+              {{ 'Start a project' | translate:'ابدأ مشروعك' }}
+            </span>
+
+            <span class="hero-button-icon">
+
+              <i
+                class="fa-solid fa-arrow-up-right-from-square"
+              ></i>
+
+            </span>
+
+          </a>
+
+
+          <a
+            routerLink="/work"
+            class="hero-secondary-button"
+          >
+
+            <span class="secondary-play">
+
+              <i
+                class="fa-solid fa-play"
+              ></i>
+
+            </span>
+
+            <span>
+              {{ 'Explore our work' | translate:'شوف شغلنا' }}
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- HERO SIDE INFO -->
+    <!-- ===================================== -->
+
+    <div class="hero-side-info">
+
+      <span>
+        {{ 'SCROLL TO EXPLORE' | translate:'اسحب للاستكشاف' }}
+      </span>
+
+      <div class="scroll-arrow">
+        <span></span>
+      </div>
+
+    </div>
+
+
+    <div class="hero-index">
+      01 / 08
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- MARQUEE -->
+  <!-- ========================================= -->
+
+  <section class="marquee-section">
+
+    <div class="marquee-track">
+
+      <div class="marquee-content">
+
+        <span>
+          {{ 'STRATEGY' | translate:'استراتيجية' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'CONTENT' | translate:'محتوى' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'MEDIA BUYING' | translate:'ميديا باينج' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'DESIGN' | translate:'تصميم' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'BRANDING' | translate:'براندينج' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'DIGITAL' | translate:'ديجيتال' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'STRATEGY' | translate:'استراتيجية' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'CONTENT' | translate:'محتوى' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ 'MEDIA BUYING' | translate:'ميديا باينج' }}
+        </span>
+
+        <i class="fa-solid fa-star"></i>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- INTRO -->
+  <!-- ========================================= -->
+
+  <section class="intro-section">
+
+    <div
+      #reveal
+      class="section-index reveal"
+    >
+      02 / 08
+    </div>
+
+
+    <div class="intro-layout">
+
+      <div
+        #reveal
+        class="intro-small reveal reveal-delay-one"
+      >
+
+        <span class="red-line"></span>
+
+        <span>
+          {{ 'WHAT WE DO' | translate:'ماذا نفعل' }}
+        </span>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-heading reveal reveal-delay-two"
+      >
+
+        <h2>
+
+          {{ "WE DON'T JUST" | translate:'نحن لا نقوم فقط بـ' }}
+
+          <span>
+            {{ 'CREATE.' | translate:'الإبداع.' }}
+          </span>
+
+          <br />
+
+          {{ 'WE CREATE' | translate:'بل نصنع' }}
+
+          <strong>
+            {{ 'IMPACT.' | translate:'التأثير.' }}
+          </strong>
+
+        </h2>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-description reveal reveal-delay-three"
+      >
+
+        <p>
+
+          {{
+            'From the first idea to the final campaign, Benzed brings strategy, creativity, technology and execution together.'
+            | translate:'من أول فكرة وحتى إطلاق الحملة، تجمع Benzed بين الاستراتيجية والإبداع والتكنولوجيا والتنفيذ في مكان واحد.'
+          }}
+
+        </p>
+
+
+        <p>
+
+          {{
+            'We help brands look better, communicate better and grow faster.'
+            | translate:'نساعد العلامات التجارية على الظهور بشكل أفضل والتواصل بشكل أقوى والنمو بشكل أسرع.'
+          }}
+
+        </p>
+
+
+        <a
+          routerLink="/about"
+          class="text-link"
+        >
+
+          <span>
+            {{ 'More about Benzed' | translate:'اعرف أكتر عن Benzed' }}
+          </span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- VIDEO SHOWCASE -->
+  <!-- ========================================= -->
+
+  <section class="video-section">
+
+    <div
+      #reveal
+      class="video-header reveal"
+    >
+
+      <div>
+
+        <span class="section-kicker">
+          {{ 'SELECTED MOTION' | translate:'مختارات من أعمالنا' }}
+        </span>
+
+        <h2>
+
+          {{ 'WATCH' | translate:'شاهد' }}
+
+          <span>BENZED</span>
+
+          {{ 'IN ACTION.' | translate:'أثناء العمل.' }}
+
+        </h2>
+
+      </div>
+
+
+      <span class="section-index">
+        03 / 08
+      </span>
+
+    </div>
+
+
+    <!-- MAIN VIDEO -->
+
+    <div
+      #reveal
+      class="main-video reveal reveal-delay-one"
+    >
+
+      <div class="video-placeholder">
+
+        <div class="video-noise"></div>
+
+        <div class="video-placeholder-content">
+
+          <span class="video-number">
+            VIDEO 01
+          </span>
+
+          <i class="fa-solid fa-play video-play"></i>
+
+          <span class="video-label">
+            {{ 'BRAND / CAMPAIGN SHOWREEL' | translate:'شو ريل البراند والحملات' }}
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="video-overlay-text">
+        BENZED — SHOWREEL
+      </div>
+
+    </div>
+
+
+    <!-- SMALL VIDEOS -->
+
+    <div class="video-grid">
+
+      <!-- VIDEO 02 -->
+
+      <div
+        #reveal
+        class="small-video reveal reveal-delay-one"
+      >
+
+        <div class="video-placeholder video-purple">
+
+          <span>VIDEO 02</span>
+
+          <i class="fa-solid fa-play"></i>
+
+        </div>
+
+        <div class="small-video-info">
+
+          <span>
+            {{ 'SOCIAL MEDIA' | translate:'سوشيال ميديا' }}
+          </span>
+
+          <span>00:24</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 03 -->
+
+      <div
+        #reveal
+        class="small-video reveal reveal-delay-two"
+      >
+
+        <div class="video-placeholder video-red">
+
+          <span>VIDEO 03</span>
+
+          <i class="fa-solid fa-play"></i>
+
+        </div>
+
+        <div class="small-video-info">
+
+          <span>
+            {{ 'CAMPAIGN' | translate:'حملة إعلانية' }}
+          </span>
+
+          <span>00:31</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 04 -->
+
+      <div
+        #reveal
+        class="small-video reveal reveal-delay-three"
+      >
+
+        <div class="video-placeholder video-orange">
+
+          <span>VIDEO 04</span>
+
+          <i class="fa-solid fa-play"></i>
+
+        </div>
+
+        <div class="small-video-info">
+
+          <span>
+            {{ 'CONTENT' | translate:'محتوى' }}
+          </span>
+
+          <span>00:18</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIDEO 05 -->
+
+      <div
+        #reveal
+        class="small-video reveal reveal-delay-four"
+      >
+
+        <div class="video-placeholder video-dark">
+
+          <span>VIDEO 05</span>
+
+          <i class="fa-solid fa-play"></i>
+
+        </div>
+
+        <div class="small-video-info">
+
+          <span>
+            {{ 'BRANDING' | translate:'براندينج' }}
+          </span>
+
+          <span>00:42</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- SERVICES -->
+  <!-- ========================================= -->
+
+  <section class="home-services">
+
+    <div class="services-top">
+
+      <div
+        #reveal
+        class="reveal"
+      >
+
+        <span class="section-kicker">
+          {{ 'OUR CAPABILITIES' | translate:'خدماتنا' }}
+        </span>
+
+        <h2>
+
+          {{ 'ONE AGENCY.' | translate:'وكالة واحدة.' }}
+
+          <br />
+
+          <span>
+            {{ 'MANY WAYS' | translate:'طرق كثيرة' }}
+          </span>
+
+          {{ 'TO WIN.' | translate:'للنجاح.' }}
+
+        </h2>
+
+      </div>
+
+
+      <span class="section-index">
+        04 / 08
+      </span>
+
+    </div>
+
+
+    <div class="services-track">
+
+      <!-- SERVICE 01 -->
+
+      <article
+        #reveal
+        class="service-card service-card-red reveal"
+      >
+
+        <div class="service-card-top">
+
+          <span>01</span>
+
+          <i class="fa-solid fa-hashtag"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'SOCIAL' | translate:'سوشيال' }}
+          </span>
+
+          <h3>
+
+            {{ 'SOCIAL MEDIA' | translate:'إدارة السوشيال ميديا' }}
+
+            <br />
+
+            {{ 'MANAGEMENT' | translate:'والحسابات' }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Strategy, calendars, community, content and consistent brand presence.'
+              | translate:'استراتيجية، خطط محتوى، إدارة المجتمع، محتوى وحضور مستمر للعلامة التجارية.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+
+      <!-- SERVICE 02 -->
+
+      <article
+        #reveal
+        class="service-card service-card-pink reveal reveal-delay-one"
+      >
+
+        <div class="service-card-top">
+
+          <span>02</span>
+
+          <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'PERFORMANCE' | translate:'أداء' }}
+          </span>
+
+          <h3>
+
+            {{ 'MEDIA BUYING' | translate:'الميديا باينج' }}
+
+            <br />
+
+            & ADS
+
+          </h3>
+
+          <p>
+
+            {{
+              'Performance campaigns designed around reach, leads and growth.'
+              | translate:'حملات إعلانية قائمة على الوصول والعملاء المحتملين والنمو.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+
+      <!-- SERVICE 03 -->
+
+      <article
+        #reveal
+        class="service-card service-card-orange reveal reveal-delay-two"
+      >
+
+        <div class="service-card-top">
+
+          <span>03</span>
+
+          <i class="fa-solid fa-video"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'CREATIVE' | translate:'إبداع' }}
+          </span>
+
+          <h3>
+
+            {{ 'CONTENT' | translate:'صناعة' }}
+
+            <br />
+
+            {{ 'CREATION' | translate:'المحتوى' }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Reels, photography, concepts, storytelling and creative production.'
+              | translate:'ريلز، تصوير، أفكار، ستوري تيلنج وإنتاج إبداعي متكامل.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+
+      <!-- SERVICE 04 -->
+
+      <article
+        #reveal
+        class="service-card service-card-purple reveal reveal-delay-three"
+      >
+
+        <div class="service-card-top">
+
+          <span>04</span>
+
+          <i class="fa-solid fa-pen-nib"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'VISUAL' | translate:'بصري' }}
+          </span>
+
+          <h3>
+
+            {{ 'GRAPHIC' | translate:'جرافيك' }}
+
+            <br />
+
+            {{ 'DESIGN' | translate:'ديزاين' }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Social designs, campaigns, ads, carousels and visual systems.'
+              | translate:'تصميمات سوشيال، حملات، إعلانات، كاروسيل وأنظمة بصرية متكاملة.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+
+      <!-- SERVICE 05 -->
+
+      <article
+        #reveal
+        class="service-card service-card-dark reveal reveal-delay-four"
+      >
+
+        <div class="service-card-top">
+
+          <span>05</span>
+
+          <i class="fa-solid fa-shapes"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'IDENTITY' | translate:'هوية' }}
+          </span>
+
+          <h3>
+
+            {{ 'BRANDING' | translate:'بناء العلامة' }}
+
+            <br />
+
+            {{ '& IDENTITY' | translate:'والهوية البصرية' }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Brands with a clear visual language, personality and direction.'
+              | translate:'نبني علامات تجارية بهوية واضحة وشخصية واتجاه بصري مميز.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+
+      <!-- SERVICE 06 -->
+
+      <article
+        #reveal
+        class="service-card service-card-gradient reveal"
+      >
+
+        <div class="service-card-top">
+
+          <span>06</span>
+
+          <i class="fa-solid fa-bolt"></i>
+
+        </div>
+
+
+        <div class="service-card-content">
+
+          <span class="service-mini">
+            {{ 'DIGITAL' | translate:'ديجيتال' }}
+          </span>
+
+          <h3>
+
+            {{ 'WEB &' | translate:'المواقع و' }}
+
+            <br />
+
+            {{ 'SOFTWARE' | translate:'البرمجيات' }}
+
+          </h3>
+
+          <p>
+
+            {{
+              'Websites, landing pages and digital products that complete the experience.'
+              | translate:'مواقع، لاندنج بيدج ومنتجات رقمية تكمل تجربة العلامة التجارية.'
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="service-card-arrow">
+          ↗
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="services-more">
+
+      <a
+        routerLink="/services"
+        class="outline-button"
+      >
+
+        <span>
+          {{ 'Explore all services' | translate:'استكشف كل الخدمات' }}
+        </span>
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- WORK -->
+  <!-- ========================================= -->
+
+  <section class="work-preview">
+
+    <div
+      #reveal
+      class="work-heading reveal"
+    >
+
+      <div>
+
+        <span class="section-kicker">
+          {{ 'SELECTED WORK' | translate:'أعمال مختارة' }}
+        </span>
+
+        <h2>
+
+          {{ 'IDEAS' | translate:'أفكار' }}
+
+          <span>
+            {{ 'INTO' | translate:'إلى' }}
+          </span>
+
+          {{ 'IMPACT.' | translate:'تأثير.' }}
+
+        </h2>
+
+      </div>
+
+
+      <span class="section-index">
+        05 / 08
+      </span>
+
+    </div>
+
+
+    <div class="work-feature">
+
+      <div
+        #reveal
+        class="work-image reveal"
+      >
+
+        <div class="work-placeholder">
+
+          <span>
+            PROJECT 01
+          </span>
+
+          <strong>
+            {{ 'CASE STUDY' | translate:'دراسة حالة' }}
+          </strong>
+
+        </div>
+
+
+        <div class="work-floating-tag">
+          BENZED / 01
+        </div>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="work-info reveal reveal-delay-two"
+      >
+
+        <span class="project-number">
+          {{ '01 — FEATURED PROJECT' | translate:'01 — مشروع مميز' }}
+        </span>
+
+
+        <h3>
+
+          {{ 'YOUR BRAND' | translate:'علامتك التجارية' }}
+
+          <br />
+
+          <span>
+            {{ 'DESERVES MORE.' | translate:'تستحق أكثر.' }}
+          </span>
+
+        </h3>
+
+
+        <p>
+
+          {{
+            'A creative campaign combining strategy, visual identity, content and digital execution.'
+            | translate:'حملة إبداعية تجمع بين الاستراتيجية والهوية البصرية والمحتوى والتنفيذ الرقمي.'
+          }}
+
+        </p>
+
+
+        <div class="work-meta">
+
+          <span>
+            {{ 'BRANDING' | translate:'براندينج' }}
+          </span>
+
+          <span>
+            {{ 'CONTENT' | translate:'محتوى' }}
+          </span>
+
+          <span>
+            {{ 'CAMPAIGN' | translate:'حملة' }}
+          </span>
+
+        </div>
+
+
+        <a
+          routerLink="/work"
+          class="text-link"
+        >
+
+          <span>
+            {{ 'View all work' | translate:'شوف كل أعمالنا' }}
+          </span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- NUMBERS -->
+  <!-- ========================================= -->
+
+  <section class="numbers-section">
+
+    <div
+      #reveal
+      class="numbers-intro reveal"
+    >
+
+      <span class="section-kicker">
+        {{ 'THE NUMBERS' | translate:'بالأرقام' }}
+      </span>
+
+      <h2>
+
+        {{ 'CREATIVE' | translate:'طاقة' }}
+
+        <span>
+          {{ 'ENERGY.' | translate:'إبداعية.' }}
+        </span>
+
+        {{ 'REAL' | translate:'و' }}
+
+        <strong>
+          {{ 'RESULTS.' | translate:'نتائج حقيقية.' }}
+        </strong>
+
+      </h2>
+
+    </div>
+
+
+    <div class="numbers-grid">
+
+      <div
+        #reveal
+        class="number-item reveal"
+      >
+
+        <strong>
+          50<span>+</span>
+        </strong>
+
+        <span>
+          {{ 'PROJECTS' | translate:'مشروع' }}
+        </span>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="number-item reveal reveal-delay-one"
+      >
+
+        <strong>
+          30<span>+</span>
+        </strong>
+
+        <span>
+          {{ 'BRANDS' | translate:'براند' }}
+        </span>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="number-item reveal reveal-delay-two"
+      >
+
+        <strong>
+          100<span>%</span>
+        </strong>
+
+        <span>
+          {{ 'CREATIVE' | translate:'إبداع' }}
+        </span>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="number-item reveal reveal-delay-three"
+      >
+
+        <strong>
+          24<span>/7</span>
+        </strong>
+
+        <span>
+          {{ 'IDEAS' | translate:'أفكار' }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- FINAL CTA -->
+  <!-- ========================================= -->
+
+  <section class="final-cta">
+
+    <div class="cta-orbit orbit-one"></div>
+
+    <div class="cta-orbit orbit-two"></div>
+
+    <div class="cta-orbit orbit-three"></div>
+
+
+    <div
+      #reveal
+      class="cta-content reveal"
+    >
+
+      <span class="section-kicker">
+        {{ 'READY?' | translate:'جاهز؟' }}
+      </span>
+
+
+      <h2>
+
+        {{ "LET'S MAKE" | translate:'يلا نصنع' }}
+
+        <br />
+
+        <span>
+          {{ 'SOMETHING' | translate:'شيئًا' }}
+        </span>
+
+        <br />
+
+        {{ 'UNFORGETTABLE.' | translate:'لا يُنسى.' }}
+
+      </h2>
+
+
+      <a
+        routerLink="/contact"
+        class="final-cta-button"
+      >
+
+        <span>
+          {{ 'Start your project' | translate:'ابدأ مشروعك' }}
+        </span>
+
+        <span>
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+          ></i>
+
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <span class="final-index">
+      08 / 08
+    </span>
+
+  </section>
+
+</main>

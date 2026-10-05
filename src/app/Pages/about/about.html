@@ -1,0 +1,693 @@
+<main
+  class="about-page"
+
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="resetParallax()"
+  (window:scroll)="onWindowScroll()"
+>
+
+  <!-- =====================================================
+       SCROLL PROGRESS
+  ===================================================== -->
+
+  <div
+    class="scroll-progress"
+    [style.--scroll-progress]="scrollProgress"
+  ></div>
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section class="about-hero">
+
+    <div class="about-grid"></div>
+
+    <div class="about-noise"></div>
+
+    <div class="about-glow about-glow-red"></div>
+
+    <div class="about-glow about-glow-pink"></div>
+
+    <div class="about-glow about-glow-orange"></div>
+
+
+    <!-- 3D SCENE -->
+
+    <div
+      class="about-3d-scene"
+
+      [style.--mouse-x]="mouseX"
+      [style.--mouse-y]="mouseY"
+    >
+
+      <div class="about-orb">
+
+        <div class="about-orb-inner"></div>
+
+      </div>
+
+      <div class="about-ring ring-one"></div>
+
+      <div class="about-ring ring-two"></div>
+
+      <div class="about-ring ring-three"></div>
+
+      <div class="about-orb-dot"></div>
+
+
+      <div class="about-floating-shape shape-one"></div>
+
+      <div class="about-floating-shape shape-two"></div>
+
+      <div class="about-floating-shape shape-three"></div>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="about-hero-content">
+
+      <div class="about-eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        <span>
+          {{ 'WHO WE ARE' | translate:'مين إحنا' }}
+        </span>
+
+        <span class="eyebrow-line"></span>
+
+      </div>
+
+
+      <h1 class="about-title">
+
+        {{ 'WE ARE' | translate:'إحنا' }}
+
+        <span>
+          {{ 'BENZED.' | translate:'BENZED.' }}
+        </span>
+
+      </h1>
+
+
+      <p class="about-hero-description">
+
+        {{
+          'A creative digital agency building brands, campaigns and digital experiences that people remember.'
+          | translate:
+          'وكالة إبداعية رقمية بنبني براندات وحملات وتجارب رقمية الناس تفتكرها.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="about-hero-button"
+      >
+
+        <span>
+          {{ 'Work with us' | translate:'اشتغل معانا' }}
+        </span>
+
+        <span class="button-icon">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="about-scroll">
+
+      {{ 'SCROLL TO EXPLORE' | translate:'انزل لاستكشاف المزيد' }}
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MANIFESTO
+  ===================================================== -->
+
+  <section class="about-manifesto">
+
+    <div
+      class="manifesto-label reveal"
+      #reveal
+    >
+
+      <span class="section-number">
+        01
+      </span>
+
+      <span>
+        {{ 'OUR MINDSET' | translate:'طريقتنا' }}
+      </span>
+
+    </div>
+
+
+    <div class="manifesto-content">
+
+      <h2
+        class="manifesto-title reveal reveal-delay-one"
+        #reveal
+      >
+
+        {{
+          'WE DON’T JUST MAKE THINGS LOOK GOOD.'
+          | translate:
+          'إحنا مش بس بنخلي الحاجة شكلها حلو.'
+        }}
+
+        <span>
+          {{
+            'WE MAKE THEM MATTER.'
+            | translate:
+            'إحنا بنخليها مؤثرة.'
+          }}
+        </span>
+
+      </h2>
+
+
+      <div
+        class="manifesto-text reveal reveal-delay-two"
+        #reveal
+      >
+
+        <p>
+
+          {{
+            'Benzed brings strategy, creativity, technology and performance together under one roof.'
+            | translate:
+            'في Benzed بنجمع بين الاستراتيجية والإبداع والتكنولوجيا والأداء في مكان واحد.'
+          }}
+
+        </p>
+
+        <p>
+
+          {{
+            'From social media and advertising to branding, content, websites and software, we build digital experiences designed to create real impact.'
+            | translate:
+            'من السوشيال ميديا والإعلانات للبراندينج والمحتوى والمواقع والبرمجيات، بنبني تجارب رقمية هدفها تعمل تأثير حقيقي.'
+          }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       NUMBERS
+  ===================================================== -->
+
+  <section class="about-numbers">
+
+    <div
+      class="numbers-header reveal"
+      #reveal
+    >
+
+      <span class="section-number">
+        02
+      </span>
+
+      <span>
+        {{ 'BY THE NUMBERS' | translate:'بالأرقام' }}
+      </span>
+
+    </div>
+
+
+    <div class="numbers-grid">
+
+      <div
+        class="number-item reveal reveal-delay-one"
+        #reveal
+      >
+
+        <span class="number-value">
+          360°
+        </span>
+
+        <span class="number-label">
+          {{
+            'CREATIVE THINKING'
+            | translate:'تفكير إبداعي'
+          }}
+        </span>
+
+      </div>
+
+
+      <div
+        class="number-item reveal reveal-delay-two"
+        #reveal
+      >
+
+        <span class="number-value">
+          08
+        </span>
+
+        <span class="number-label">
+          {{
+            'CORE SERVICES'
+            | translate:'خدمات أساسية'
+          }}
+        </span>
+
+      </div>
+
+
+      <div
+        class="number-item reveal reveal-delay-three"
+        #reveal
+      >
+
+        <span class="number-value">
+          01
+        </span>
+
+        <span class="number-label">
+          {{
+            'CONNECTED TEAM'
+            | translate:'فريق واحد'
+          }}
+        </span>
+
+      </div>
+
+
+      <div
+        class="number-item reveal reveal-delay-four"
+        #reveal
+      >
+
+        <span class="number-value">
+          ∞
+        </span>
+
+        <span class="number-label">
+          {{
+            'POSSIBILITIES'
+            | translate:'احتمالات لا نهائية'
+          }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       WHAT WE BELIEVE
+  ===================================================== -->
+
+  <section class="about-beliefs">
+
+    <div
+      class="beliefs-header reveal"
+      #reveal
+    >
+
+      <span class="section-number">
+        03
+      </span>
+
+      <div>
+
+        <span class="section-kicker">
+          {{
+            'WHAT WE BELIEVE'
+            | translate:'إحنا بنؤمن بإيه'
+          }}
+        </span>
+
+        <h2>
+          {{
+            'GOOD WORK STARTS WITH GOOD THINKING.'
+            | translate:
+            'الشغل الحلو بيبدأ بتفكير صح.'
+          }}
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="beliefs-grid">
+
+      <!-- BELIEF 01 -->
+
+      <article
+        class="belief-card reveal reveal-delay-one"
+        #reveal
+      >
+
+        <span class="belief-number">
+          01
+        </span>
+
+        <div class="belief-icon">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <h3>
+          {{
+            'IDEAS FIRST'
+            | translate:'الفكرة أولًا'
+          }}
+        </h3>
+
+        <p>
+          {{
+            'We start with the idea, not the template.'
+            | translate:
+            'بنبدأ بالفكرة، مش بقالب جاهز.'
+          }}
+        </p>
+
+      </article>
+
+
+      <!-- BELIEF 02 -->
+
+      <article
+        class="belief-card reveal reveal-delay-two"
+        #reveal
+      >
+
+        <span class="belief-number">
+          02
+        </span>
+
+        <div class="belief-icon">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+
+        <h3>
+          {{
+            'MOVE FAST'
+            | translate:'نتحرك بسرعة'
+          }}
+        </h3>
+
+        <p>
+          {{
+            'We test, learn, adapt and keep moving.'
+            | translate:
+            'بنجرب ونتعلم ونطور ونكمل للأمام.'
+          }}
+        </p>
+
+      </article>
+
+
+      <!-- BELIEF 03 -->
+
+      <article
+        class="belief-card reveal reveal-delay-three"
+        #reveal
+      >
+
+        <span class="belief-number">
+          03
+        </span>
+
+        <div class="belief-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <h3>
+          {{
+            'RESULTS MATTER'
+            | translate:'النتائج مهمة'
+          }}
+        </h3>
+
+        <p>
+          {{
+            'Creative work should look good and perform.'
+            | translate:
+            'الشغل الإبداعي لازم يكون شكله قوي ويحقق نتائج.'
+          }}
+        </p>
+
+      </article>
+
+
+      <!-- BELIEF 04 -->
+
+      <article
+        class="belief-card reveal reveal-delay-four"
+        #reveal
+      >
+
+        <span class="belief-number">
+          04
+        </span>
+
+        <div class="belief-icon">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>
+          {{
+            'WE COLLABORATE'
+            | translate:'بنشتغل كفريق'
+          }}
+        </h3>
+
+        <p>
+          {{
+            'The best work happens when everyone brings something to the table.'
+            | translate:
+            'أحسن شغل بيطلع لما كل شخص يضيف حاجة مختلفة.'
+          }}
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CAPABILITIES
+  ===================================================== -->
+
+  <section class="about-capabilities">
+
+    <div
+      class="capabilities-header reveal"
+      #reveal
+    >
+
+      <span class="section-number">
+        04
+      </span>
+
+      <span class="section-kicker">
+        {{
+          'WHAT WE DO'
+          | translate:'إحنا بنعمل إيه'
+        }}
+      </span>
+
+    </div>
+
+
+    <div class="capabilities-content">
+
+      <h2
+        class="capabilities-title reveal reveal-delay-one"
+        #reveal
+      >
+
+        {{
+          'ONE TEAM.'
+          | translate:'فريق واحد.'
+        }}
+
+        <span>
+          {{
+            'MANY DISCIPLINES.'
+            | translate:'تخصصات كتير.'
+          }}
+        </span>
+
+      </h2>
+
+
+      <div
+        class="capabilities-list reveal reveal-delay-two"
+        #reveal
+      >
+
+        <div class="capability-row">
+
+          <span>01</span>
+
+          <strong>
+            {{
+              'Social Media & Content'
+              | translate:'السوشيال ميديا والمحتوى'
+            }}
+          </strong>
+
+        </div>
+
+
+        <div class="capability-row">
+
+          <span>02</span>
+
+          <strong>
+            {{
+              'Media Buying & Performance'
+              | translate:'الميديا باينج والأداء الإعلاني'
+            }}
+          </strong>
+
+        </div>
+
+
+        <div class="capability-row">
+
+          <span>03</span>
+
+          <strong>
+            {{
+              'Branding & Graphic Design'
+              | translate:'البراندينج والتصميم الجرافيكي'
+            }}
+          </strong>
+
+        </div>
+
+
+        <div class="capability-row">
+
+          <span>04</span>
+
+          <strong>
+            {{
+              'Web & Software'
+              | translate:'المواقع والبرمجيات'
+            }}
+          </strong>
+
+        </div>
+
+
+        <div class="capability-row">
+
+          <span>05</span>
+
+          <strong>
+            {{
+              'Creative Campaigns'
+              | translate:'الحملات الإبداعية'
+            }}
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FINAL CTA
+  ===================================================== -->
+
+  <section class="about-cta">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-ring"></div>
+
+    <div class="cta-ring cta-ring-two"></div>
+
+
+    <div
+      class="cta-content reveal"
+      #reveal
+    >
+
+      <span class="cta-index">
+        05 / LET'S CREATE
+      </span>
+
+
+      <h2>
+
+        {{
+          'HAVE AN IDEA?'
+          | translate:'عندك فكرة؟'
+        }}
+
+        <span>
+          {{
+            'LET’S MAKE IT REAL.'
+            | translate:'خلينا نحولها لحقيقة.'
+          }}
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        {{
+          'Tell us what you are building. We will figure out what comes next.'
+          | translate:
+          'قولنا إيه اللي عايز تبنيه، وإحنا هنحدد معاك الخطوة الجاية.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="cta-button"
+      >
+
+        <span>
+          {{
+            'Start a project'
+            | translate:'ابدأ مشروع'
+          }}
+        </span>
+
+        <span class="button-icon">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>

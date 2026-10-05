@@ -1,0 +1,453 @@
+<header
+  class="navbar-wrapper"
+  [class.navbar-wrapper-scrolled]="isScrolled"
+>
+
+  <!-- =====================================================
+       NAVBAR
+  ===================================================== -->
+
+  <nav
+    class="navbar-shell"
+    [class.navbar-top]="!isScrolled"
+    [class.navbar-scrolled]="isScrolled"
+  >
+
+    <!-- ===================================================
+         LOGO
+    =================================================== -->
+
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="brand"
+      aria-label="Benzed Home"
+    >
+
+      <div class="brand-icon">
+
+        <div class="brand-glow"></div>
+
+        <img
+          src="images/benzed-icon-white.svg"
+          alt="Benzed"
+        />
+
+      </div>
+
+
+      <span class="brand-name">
+        BENZED
+      </span>
+
+    </a>
+
+
+    <!-- ===================================================
+         DESKTOP NAVIGATION
+    =================================================== -->
+
+    <div class="desktop-nav">
+
+      <!-- WORK -->
+
+      <a
+        routerLink="/work"
+        routerLinkActive="nav-active"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
+        class="nav-link"
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'Work'
+              : 'أعمالنا'
+          }}
+        </span>
+
+      </a>
+
+
+      <!-- SERVICES -->
+
+      <a
+        routerLink="/services"
+        routerLinkActive="nav-active"
+        class="nav-link"
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'Services'
+              : 'خدماتنا'
+          }}
+        </span>
+
+      </a>
+
+
+      <!-- ABOUT -->
+
+      <a
+        routerLink="/about"
+        routerLinkActive="nav-active"
+        class="nav-link"
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'About'
+              : 'من نحن'
+          }}
+        </span>
+
+      </a>
+
+
+      <!-- CONTACT -->
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="nav-active"
+        class="nav-link"
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'Contact'
+              : 'تواصل معنا'
+          }}
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <!-- ===================================================
+         RIGHT CONTROLS
+    =================================================== -->
+
+    <div class="navbar-controls">
+
+      <!-- LANGUAGE -->
+
+      <button
+        type="button"
+        class="nav-control language-control"
+
+        (click)="toggleLanguage()"
+
+        [attr.aria-label]="
+          currentLanguage === 'en'
+            ? 'Switch to Arabic'
+            : 'Switch to English'
+        "
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'AR'
+              : 'EN'
+          }}
+        </span>
+
+      </button>
+
+
+      <!-- CTA -->
+
+      <a
+        routerLink="/contact"
+        class="nav-cta"
+      >
+
+        <span>
+          {{
+            currentLanguage === 'en'
+              ? 'Start a project'
+              : 'ابدأ مشروعك'
+          }}
+        </span>
+
+        <span class="nav-cta-icon">
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+          ></i>
+
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           MOBILE MENU BUTTON
+           ONLY BELOW 1024px
+      ================================================= -->
+
+      <button
+        type="button"
+
+        class="menu-toggle"
+
+        (click)="toggleMenu()"
+
+        [class.menu-open]="isMenuOpen"
+
+        [attr.aria-expanded]="isMenuOpen"
+
+        aria-label="Toggle menu"
+      >
+
+        <span class="menu-line"></span>
+
+        <span class="menu-line"></span>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ===================================================== -->
+
+  <div
+    class="mobile-menu"
+    [class.mobile-menu-open]="isMenuOpen"
+  >
+
+    <!-- BACKGROUND -->
+
+    <div class="mobile-menu-bg"></div>
+
+    <div
+      class="mobile-orb mobile-orb-one"
+    ></div>
+
+    <div
+      class="mobile-orb mobile-orb-two"
+    ></div>
+
+
+    <!-- MENU CONTENT -->
+
+    <div class="mobile-menu-content">
+
+
+      <!-- HEADER -->
+
+      <div class="mobile-menu-header">
+
+        <span class="menu-label">
+
+          {{
+            currentLanguage === 'en'
+              ? 'Navigation'
+              : 'القائمة'
+          }}
+
+        </span>
+
+
+        <span class="menu-number">
+          01 — 05
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           HOME
+      ================================================= -->
+
+      <a
+        routerLink="/"
+        routerLinkActive="mobile-link-active"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
+        (click)="closeMenu()"
+        class="mobile-link"
+      >
+
+        <span class="mobile-link-number">
+          01
+        </span>
+
+        <span class="mobile-link-text">
+
+          {{
+            currentLanguage === 'en'
+              ? 'Home'
+              : 'الرئيسية'
+          }}
+
+        </span>
+
+        <span class="mobile-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           WORK
+      ================================================= -->
+
+      <a
+        routerLink="/work"
+        routerLinkActive="mobile-link-active"
+        (click)="closeMenu()"
+        class="mobile-link"
+      >
+
+        <span class="mobile-link-number">
+          02
+        </span>
+
+        <span class="mobile-link-text">
+
+          {{
+            currentLanguage === 'en'
+              ? 'Work'
+              : 'أعمالنا'
+          }}
+
+        </span>
+
+        <span class="mobile-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           SERVICES
+      ================================================= -->
+
+      <a
+        routerLink="/services"
+        routerLinkActive="mobile-link-active"
+        (click)="closeMenu()"
+        class="mobile-link"
+      >
+
+        <span class="mobile-link-number">
+          03
+        </span>
+
+        <span class="mobile-link-text">
+
+          {{
+            currentLanguage === 'en'
+              ? 'Services'
+              : 'خدماتنا'
+          }}
+
+        </span>
+
+        <span class="mobile-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           ABOUT
+      ================================================= -->
+
+      <a
+        routerLink="/about"
+        routerLinkActive="mobile-link-active"
+        (click)="closeMenu()"
+        class="mobile-link"
+      >
+
+        <span class="mobile-link-number">
+          04
+        </span>
+
+        <span class="mobile-link-text">
+
+          {{
+            currentLanguage === 'en'
+              ? 'About'
+              : 'من نحن'
+          }}
+
+        </span>
+
+        <span class="mobile-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           CONTACT
+      ================================================= -->
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="mobile-link-active"
+        (click)="closeMenu()"
+        class="mobile-link"
+      >
+
+        <span class="mobile-link-number">
+          05
+        </span>
+
+        <span class="mobile-link-text">
+
+          {{
+            currentLanguage === 'en'
+              ? 'Contact'
+              : 'تواصل معنا'
+          }}
+
+        </span>
+
+        <span class="mobile-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           MOBILE FOOTER
+      ================================================= -->
+
+      <div class="mobile-menu-footer">
+
+        <span>
+          Maadi — Cairo
+        </span>
+
+        <span>
+          BENZED © 2026
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
