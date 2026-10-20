@@ -68,3 +68,22 @@ body {
 * {
   box-sizing: border-box;
 }
+/* Arabic typography */
+html[lang="ar"],
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+/* English typography */
+html[lang="en"],
+html[lang="en"] body,
+html[lang="en"] button,
+html[lang="en"] input,
+html[lang="en"] textarea,
+html[lang="en"] select {
+  font-family: "Manrope", sans-serif;
+}
