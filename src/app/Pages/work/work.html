@@ -1,0 +1,416 @@
+<main
+  class="work-page"
+  [class.rtl]="isArabic"
+  [attr.dir]="isArabic ? 'rtl' : 'ltr'"
+>
+  <!-- BACKGROUND -->
+  <div class="work-background" aria-hidden="true">
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-grid"></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="work-hero">
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        {{ isArabic ? 'معرض أعمالنا' : 'THE BENZED X PORTFOLIO' }}
+      </div>
+
+      <h1>
+        {{ isArabic ? 'أعمالنا' : 'Our work' }}
+        <span class="hero-highlight">
+          {{ isArabic ? 'تتكلم.' : 'speaks.' }}
+        </span>
+      </h1>
+
+      <p class="hero-description">
+        {{
+          isArabic
+            ? 'من الفكرة إلى التأثير — اكتشف المشاريع والهويات التي صنعناها بعناية.'
+            : 'From ideas to impact — explore the brands, visuals, and experiences we create.'
+        }}
+      </p>
+
+      <div class="hero-actions">
+        <a routerLink="/work" fragment="portfolio" class="primary-cta">
+          {{ isArabic ? 'اكتشف أعمالنا' : 'Explore our work' }}
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>10</strong>
+          <span>{{ isArabic ? 'مجالات مختلفة' : 'Industries' }}</span>
+        </div>
+
+        <span class="stat-divider"></span>
+
+        <div class="hero-stat">
+          <strong>70<span>+</span></strong>
+          <span>{{ isArabic ? 'صورة في المعرض' : 'Visuals to explore' }}</span>
+        </div>
+
+        <span class="stat-divider"></span>
+
+        <div class="hero-stat">
+          <strong>01<span class="stat-x">X</span></strong>
+          <span>{{ isArabic ? 'أفكار خارج الصندوق' : 'Ideas without limits' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-image-frame">
+        <img
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1100&q=85"
+          alt=""
+          width="1100"
+          height="1210"
+          fetchpriority="high"
+        />
+
+        <div class="hero-image-overlay"></div>
+
+        <div class="hero-floating-card">
+          <span class="floating-card-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </span>
+
+          <span>
+            <strong>
+              {{ isArabic ? 'فكرة. تصميم. تأثير.' : 'Think. Design. Impact.' }}
+            </strong>
+
+            <small>
+              {{ isArabic ? 'إبداع يصنع الفرق' : 'Creativity that moves brands' }}
+            </small>
+          </span>
+        </div>
+
+        <span class="hero-image-number">BX / 026</span>
+      </div>
+
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="hero-cross cross-one">+</div>
+      <div class="hero-cross cross-two">+</div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">
+          {{ isArabic ? 'مشاريع مختارة' : 'SELECTED PROJECTS' }}
+        </span>
+
+        <h2>
+          {{ isArabic ? 'من كل مجال،' : 'Across every' }}
+          <span>
+            {{ isArabic ? 'حكاية مختلفة.' : 'industry.' }}
+          </span>
+        </h2>
+      </div>
+
+      <p>
+        {{
+          isArabic
+            ? 'ابحث عن شركة أو اختار المجال اللي يهمك.'
+            : 'Search for a brand or choose an industry to explore.'
+        }}
+      </p>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="portfolio-toolbar">
+      <label class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="search"
+          [(ngModel)]="searchQuery"
+          [placeholder]="
+            isArabic
+              ? 'ابحث باسم الشركة أو المجال...'
+              : 'Search by brand or industry...'
+          "
+          [attr.aria-label]="
+            isArabic ? 'ابحث في الأعمال' : 'Search projects'
+          "
+        />
+
+        @if (searchQuery) {
+          <button
+            type="button"
+            class="clear-search"
+            (click)="searchQuery = ''"
+            [attr.aria-label]="isArabic ? 'مسح البحث' : 'Clear search'"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        }
+      </label>
+
+      <span class="results-count">{{ resultsLabel }}</span>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div class="category-filters">
+      @for (category of categories; track category.id) {
+        <button
+          type="button"
+          class="category-chip"
+          [class.active]="selectedCategory === category.id"
+          (click)="selectCategory(category.id)"
+        >
+          <i class="fa-solid" [class]="category.icon"></i>
+
+          <span>
+            {{ isArabic ? category.ar : category.en }}
+          </span>
+        </button>
+      }
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="projects-list">
+      @for (
+        project of filteredProjects;
+        track trackProject($index, project);
+        let i = $index
+      ) {
+        <article
+          class="project-section"
+          [style.--project-accent]="project.accent"
+          [style.--project-index]="i"
+        >
+          <!-- PROJECT HEADER -->
+          <div class="project-heading">
+            <div class="project-title-group">
+              <span class="project-number">
+                {{ (i + 1).toString().padStart(2, '0') }}
+              </span>
+
+              <div>
+                <span class="project-category">
+                  {{ isArabic ? project.categoryAr : project.category }}
+                </span>
+
+                <h3>
+                  {{ isArabic ? project.companyAr : project.company }}
+                </h3>
+              </div>
+            </div>
+
+            <p class="project-description">
+              {{
+                isArabic
+                  ? project.descriptionAr
+                  : project.description
+              }}
+            </p>
+          </div>
+
+          <!-- GALLERY: ONE LARGE + SIX SMALL -->
+          <div class="project-gallery">
+            <button
+              type="button"
+              class="gallery-item gallery-featured"
+              (click)="openImage(project, project.images[0])"
+              [attr.aria-label]="
+                (isArabic ? 'عرض مشروع ' : 'View project: ') +
+                (isArabic ? project.companyAr : project.company)
+              "
+            >
+              <img
+                [src]="project.images[0]"
+                [alt]="
+                  (isArabic ? project.companyAr : project.company) +
+                  ' — ' +
+                  (isArabic ? 'الصورة الرئيسية' : 'Main visual')
+                "
+                loading="lazy"
+              />
+
+              <span class="image-shade"></span>
+
+              <span class="featured-image-label">
+                <span class="featured-label-dot"></span>
+                {{ isArabic ? 'الصورة الرئيسية' : 'FEATURED VISUAL' }}
+              </span>
+
+              <span class="gallery-open">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </button>
+
+            <div class="gallery-small-grid">
+              @for (
+                image of project.images.slice(1);
+                track image;
+                let imageIndex = $index
+              ) {
+                <button
+                  type="button"
+                  class="gallery-item gallery-small"
+                  [style.--image-index]="imageIndex"
+                  (click)="openImage(project, image)"
+                  [attr.aria-label]="
+                    (isArabic ? 'عرض صورة ' : 'View image ') +
+                    (imageIndex + 2) +
+                    ' — ' +
+                    (isArabic ? project.companyAr : project.company)
+                  "
+                >
+                  <img
+                    [src]="image"
+                    [alt]="
+                      (isArabic ? project.companyAr : project.company) +
+                      ' — ' +
+                      (isArabic ? 'صورة ' : 'Image ') +
+                      (imageIndex + 2)
+                    "
+                    loading="lazy"
+                  />
+
+                  <span class="image-shade"></span>
+
+                  <span class="small-image-open">
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                </button>
+              }
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <span>
+              <i class="fa-solid fa-images"></i>
+              {{ isArabic ? '7 صور في المشروع' : '7 visuals in this project' }}
+            </span>
+
+            <span class="project-footer-brand">
+              BENZED <span>X</span> MARKETING
+            </span>
+          </div>
+        </article>
+      }
+
+      <!-- EMPTY STATE -->
+      @if (filteredProjects.length === 0) {
+        <div class="empty-state">
+          <div class="empty-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <h3>
+            {{ isArabic ? 'ملقيناش نتائج' : 'No projects found' }}
+          </h3>
+
+          <p>
+            {{
+              isArabic
+                ? 'جرّب اسم شركة تاني أو اختار مجال مختلف.'
+                : 'Try another brand name or choose a different category.'
+            }}
+          </p>
+
+          <button
+            type="button"
+            class="primary-cta"
+            (click)="searchQuery = ''; selectedCategory = 'all'"
+          >
+            {{ isArabic ? 'عرض كل الأعمال' : 'Show all projects' }}
+          </button>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="work-cta">
+    <div class="cta-glow"></div>
+
+    <span class="section-kicker">
+      {{ isArabic ? 'عندك مشروع جاي؟' : 'HAVE A PROJECT IN MIND?' }}
+    </span>
+
+    <h2>
+      {{ isArabic ? 'خلينا نصنع' : 'Let’s make' }}
+      <span>
+        {{ isArabic ? 'حاجة مميزة.' : 'something iconic.' }}
+      </span>
+    </h2>
+
+    <p>
+      {{
+        isArabic
+          ? 'كل علامة كبيرة بدأت بفكرة. ابعتلنا فكرتك ونبدأ نشتغل عليها.'
+          : 'Every great brand starts with an idea. Let’s turn yours into something real.'
+      }}
+    </p>
+
+    <a routerLink="/contact" class="primary-cta cta-button">
+      {{ isArabic ? 'ابدأ مشروعك معانا' : 'Start a project with us' }}
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </section>
+
+  <!-- IMAGE LIGHTBOX -->
+  @if (activeImage && activeProject) {
+    <div
+      class="image-lightbox"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="isArabic ? 'عرض الصورة' : 'Image preview'"
+      (click)="closeImage()"
+    >
+      <div class="lightbox-topbar">
+        <div class="lightbox-brand">
+          <span class="lightbox-brand-mark">B<span>X</span></span>
+
+          <span>
+            <strong>
+              {{ isArabic ? activeProject.companyAr : activeProject.company }}
+            </strong>
+
+            <small>
+              {{ isArabic ? activeProject.categoryAr : activeProject.category }}
+            </small>
+          </span>
+        </div>
+
+        <button
+          type="button"
+          class="lightbox-close"
+          (click)="closeImage()"
+          [attr.aria-label]="isArabic ? 'إغلاق الصورة' : 'Close image'"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div
+        class="lightbox-image-wrap"
+        (click)="$event.stopPropagation()"
+      >
+        <img
+          [src]="activeImage"
+          [alt]="isArabic ? activeProject.companyAr : activeProject.company"
+        />
+      </div>
+
+      <div class="lightbox-bottom">
+        <span>BENZED X MARKETING</span>
+
+        <span>
+          {{ isArabic ? 'اضغط خارج الصورة للإغلاق' : 'Click outside to close' }}
+        </span>
+      </div>
+    </div>
+  }
+</main>

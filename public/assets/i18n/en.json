@@ -1,0 +1,66 @@
+{
+  "navbar": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "startProject": "Start a project",
+    "language": "AR"
+  },
+
+  "hero": {
+    "eyebrow": "Creative Digital Agency",
+    "title": "We turn ideas into digital experiences.",
+    "description": "Benzed is a creative digital agency building bold brands, websites, applications, and digital experiences.",
+    "cta": "Start a project",
+    "viewWork": "View our work"
+  },
+
+  "intro": {
+    "title": "We create digital experiences that make brands impossible to ignore.",
+    "description": "From strategy and branding to development and digital experiences, we build solutions designed to make an impact."
+  },
+
+  "services": {
+    "title": "What we do",
+    "subtitle": "Our services",
+    "web": "Web Development",
+    "mobile": "Mobile App Development",
+    "systems": "Software Systems",
+    "uiux": "UI/UX & Branding",
+    "marketing": "Digital Marketing",
+    "invitations": "Digital Invitations"
+  },
+
+  "work": {
+    "title": "Selected Work",
+    "subtitle": "Projects we are proud of",
+    "viewProject": "View Project",
+    "viewAll": "View all work"
+  },
+
+  "about": {
+    "title": "About Benzed",
+    "description": "We are a creative digital agency focused on building meaningful brands and powerful digital products.",
+    "more": "Discover more"
+  },
+
+  "contact": {
+    "title": "Let's build something great.",
+    "subtitle": "Have an idea? Let's turn it into reality.",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Tell us about your project",
+    "send": "Send message",
+    "phone": "Phone",
+    "emailLabel": "Email",
+    "location": "Location"
+  },
+
+  "footer": {
+    "description": "Turning ideas into digital experiences.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow us",
+    "rights": "All rights reserved."
+  }
+}

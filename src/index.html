@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+
+  <!-- ========================================= -->
+  <!-- BASIC META -->
+  <!-- ========================================= -->
+
+  <meta charset="utf-8">
+
+  <title>Benzed — Creative Digital Agency</title>
+
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Updated at runtime to match the active theme -->
+  <meta name="theme-color" content="#0D0D0B">
+
+  <meta
+    name="description"
+    content="Benzed is a creative digital agency specializing in social media, media buying, content creation, branding, digital marketing, web and software."
+  >
+
+
+  <!-- ========================================= -->
+  <!-- APPLY SAVED THEME + LANGUAGE BEFORE FIRST PAINT -->
+  <!-- (prevents the dark → light / LTR → RTL flash) -->
+  <!-- ========================================= -->
+
+  <script>
+    (function () {
+      try {
+        var root = document.documentElement;
+
+        var theme = localStorage.getItem('benzed-theme');
+        if (theme !== 'light' && theme !== 'dark') { theme = 'dark'; }
+
+        var lang = localStorage.getItem('benzed-language');
+        if (lang !== 'ar' && lang !== 'en') { lang = 'en'; }
+
+        root.setAttribute('data-theme', theme);
+        root.style.colorScheme = theme;
+        root.setAttribute('lang', lang);
+        root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) { meta.setAttribute('content', theme === 'light' ? '#F5F5F3' : '#0D0D0B'); }
+
+        if (lang === 'ar') {
+          document.title = 'Benzed — وكالة إبداعية رقمية';
+        }
+      } catch (e) { /* storage blocked: keep the defaults */ }
+    })();
+  </script>
+
+
+  <!-- ========================================= -->
+  <!-- FAVICON (visible on both light and dark browser chrome) -->
+  <!-- ========================================= -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="images/favicon-192.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="images/apple-touch-icon.png"
+  >
+
+
+  <!-- ========================================= -->
+  <!-- GOOGLE FONTS (Manrope for English, IBM Plex Sans Arabic for Arabic) -->
+  <!-- ========================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+
+<body>
+
+  <app-root></app-root>
+
+</body>
+
+</html>
