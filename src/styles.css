@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4: make the `dark:` variant follow the app's own theme switch
+  (html[data-theme]) instead of the operating-system setting.
+*/
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+
+/* =========================================================
+   THEME TOKENS
+   ---------------------------------------------------------
+   --fg-rgb / --bg-rgb are "r, g, b" channels so components can write
+   rgba(var(--fg-rgb), 0.1) and get a white overlay in dark mode and a
+   near-black overlay in light mode from a single declaration.
+========================================================= */
+
+:root {
+  color-scheme: dark;
+
+  --bg-primary: #0d0d0b;
+  --bg-secondary: #11110f;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.55);
+
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --fg-rgb: 255, 255, 255;
+  --bg-rgb: 13, 13, 11;
+
+  --on-accent: #ffffff;
+
+  --accent: #f20d18;
+  --accent-pink: #ff2fb3;
+  --accent-orange: #ff7a00;
+}
+
+
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-primary: #f5f5f3;
+  --bg-secondary: #ffffff;
+
+  --text-primary: #0d0d0b;
+  --text-secondary: rgba(13, 13, 11, 0.62);
+
+  --border-color: rgba(13, 13, 11, 0.12);
+
+  --fg-rgb: 13, 13, 11;
+  --bg-rgb: 245, 245, 243;
+
+  --accent: #f20d18;
+  --accent-pink: #e91e8c;
+  --accent-orange: #f97316;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: "Manrope", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Only animate the colour change when the visitor toggles the theme,
+   never on first paint (the inline script in index.html sets the theme
+   before anything is drawn). */
+html.theme-animating,
+html.theme-animating body {
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Form controls + scrollbars follow the active theme */
+input,
+textarea,
+select {
+  color-scheme: inherit;
+}
+
+html {
+  scrollbar-color: rgba(var(--fg-rgb), 0.25) var(--bg-primary);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY — ARABIC / ENGLISH
+========================================================= */
+
+/* Arabic typography */
+html[lang="ar"],
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+  font-family: "IBM Plex Sans Arabic", "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* English typography */
+html[lang="en"],
+html[lang="en"] body,
+html[lang="en"] button,
+html[lang="en"] input,
+html[lang="en"] textarea,
+html[lang="en"] select {
+  font-family: "Manrope", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/*
+  Arabic letters are joined, so ANY letter-spacing (positive or negative)
+  breaks the words apart. Wide tracking is only used for decorative
+  English labels, so in Arabic mode it is switched off everywhere —
+  except inside elements explicitly marked lang="en" (brand names).
+*/
+html[lang="ar"] :not(:lang(en)),
+html[lang="ar"] :not(:lang(en))::before,
+html[lang="ar"] :not(:lang(en))::after {
+  letter-spacing: 0 !important;
+}
+
+/* Phone numbers / e-mails / URLs must never be reordered by RTL */
+.ltr-text {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}

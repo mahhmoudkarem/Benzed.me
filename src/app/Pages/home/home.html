@@ -1,0 +1,586 @@
+<main
+  class="home"
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="resetParallax()"
+  (window:scroll)="onWindowScroll()"
+>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" [style.width.%]="scrollProgress"></div>
+
+
+  <!-- ========================================= -->
+  <!-- BENZED X BRAND SIGNATURE -->
+  <!-- ========================================= -->
+  <section class="brand-identity" [attr.aria-label]="'Benzed X Marketing brand identity' | translate:'هوية Benzed X Marketing'">
+    <div class="brand-identity-grid" aria-hidden="true"></div>
+    <div class="brand-identity-glow brand-identity-glow-red" aria-hidden="true"></div>
+    <div class="brand-identity-glow brand-identity-glow-white" aria-hidden="true"></div>
+
+    <div class="brand-identity-layout">
+      <!-- Large brand mark on the left -->
+      <div class="brand-visual" [attr.aria-label]="'Benzed logo animation' | translate:'حركة شعار Benzed'">
+        <div class="brand-visual-topline"><span></span> {{ 'BENZED / BRAND SYSTEM' | translate:'BENZED / هوية العلامة' }}</div>
+        <div class="brand-logo-stage">
+          <div class="brand-logo-halo" aria-hidden="true"></div>
+          <div class="brand-logo-orbit brand-logo-orbit-one" aria-hidden="true"></div>
+          <div class="brand-logo-orbit brand-logo-orbit-two" aria-hidden="true"></div>
+
+          <span class="brand-rise-arrow rise-arrow-one" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-two" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-three" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-four" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-five" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-six" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-seven" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="brand-rise-arrow rise-arrow-eight" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+
+          <div class="brand-logo-frame">
+            <img src="images/benzed-icon-white.svg" alt="Benzed X Marketing" width="475" height="475" />
+          </div>
+          <span class="brand-logo-caption">BX<span>®</span></span>
+        </div>
+        <div class="brand-visual-bottomline"><span>{{ 'CREATIVITY' | translate:'إبداع' }}</span><i></i><span>{{ 'STRATEGY' | translate:'استراتيجية' }}</span><i></i><span>{{ 'IMPACT' | translate:'تأثير' }}</span></div>
+      </div>
+
+      <!-- Brand statement on the right -->
+      <div class="brand-identity-content">
+        <span class="brand-identity-kicker">
+          <span class="brand-live-dot"></span>
+          {{ 'CREATIVE ENERGY. REAL GROWTH.' | translate:'إبداع يحرك النمو' }}
+        </span>
+
+        <h2 class="brand-identity-name">{{ 'Benzed' | translate:'بنزيد' }}<span class="brand-name-period">.</span></h2>
+        <p class="brand-identity-subtitle">BENZED <span>X</span> MARKETING</p>
+
+        <p class="brand-identity-description">
+          {{ 'We make brands impossible to ignore — with bold ideas, sharp strategy, and creative that moves people.' | translate:'بنصنع علامات تجارية صعب تتنسي، بأفكار جريئة واستراتيجية واضحة وإبداع بيحرك الناس.' }}
+        </p>
+
+        <div class="brand-identity-motto">
+          <span class="motto-line"></span>
+          <span>{{ 'MAKE YOUR NEXT MOVE COUNT.' | translate:'خلي خطوتك الجاية تصنع فرق.' }}</span>
+        </div>
+
+        <a href="#hero-start" class="brand-identity-scroll" (click)="scrollToHero($event)">
+          <span>{{ 'DISCOVER THE AGENCY' | translate:'اكتشف الوكالة' }}</span>
+          <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="brand-identity-index" aria-hidden="true"><span>01</span> / {{ 'BRAND SIGNATURE' | translate:'توقيع العلامة' }}</div>
+    <div class="brand-bottom-rule" aria-hidden="true"></div>
+  </section>
+
+
+
+  <!-- ========================================= -->
+  <!-- 01 HERO -->
+  <!-- ========================================= -->
+  <section class="hero" id="hero-start">
+
+    <div class="hero-noise"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-red"></div>
+    <div class="hero-glow hero-glow-pink"></div>
+    <div class="hero-glow hero-glow-orange"></div>
+
+    <!-- 3D OBJECT (follows mouse + scroll) -->
+    <div
+      class="hero-3d-scene"
+      [style.transform]="
+        'translateY(' + (scrollY * 0.18) + 'px) rotateX(' + (-mouseY * 7) + 'deg) rotateY(' + (mouseX * 9) + 'deg)'
+      "
+    >
+      <div class="hero-orb">
+        <div class="orb-ring orb-ring-one"></div>
+        <div class="orb-ring orb-ring-two"></div>
+        <div class="orb-ring orb-ring-three"></div>
+        <div class="orb-core"></div>
+      </div>
+
+      <div class="floating-shape shape-one"></div>
+      <div class="floating-shape shape-two"></div>
+      <div class="floating-shape shape-three"></div>
+    </div>
+
+    <div class="hero-content">
+
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>{{ 'CREATIVE DIGITAL AGENCY' | translate:'وكالة إبداعية رقمية' }}</span>
+        <span class="eyebrow-line"></span>
+        <span>{{ 'CAIRO — EGYPT' | translate:'القاهرة — مصر' }}</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-line hero-title-line-one">
+          {{ 'WE' | translate:'نحن' }}
+        </span>
+
+        <span class="hero-title-line hero-title-line-two">
+          {{ 'MAKE' | translate:'نصنع' }}
+          <span class="hero-title-accent">{{ 'BRANDS' | translate:'علامات تجارية' }}</span>
+        </span>
+
+        <span class="hero-title-line hero-title-line-three">
+          <span class="outline-text">{{ 'IMPOSSIBLE' | translate:'يستحيل' }}</span>
+          {{ 'TO IGNORE.' | translate:'تجاهلها.' }}
+        </span>
+      </h1>
+
+      <div class="hero-bottom">
+
+        <p class="hero-description">
+          {{
+            'We create bold identities, content, campaigns and digital experiences that make brands impossible to miss.'
+            | translate:'نصنع هويات جريئة ومحتوى وحملات وتجارب رقمية تجعل علامتك التجارية مستحيل تجاهلها.'
+          }}
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/contact" class="hero-main-button">
+            <span>{{ 'Start a project' | translate:'ابدأ مشروعك' }}</span>
+            <span class="hero-button-icon">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <a routerLink="/work" class="hero-secondary-button">
+            <span class="secondary-play">
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
+            </span>
+            <span>{{ 'Explore our work' | translate:'شوف شغلنا' }}</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-side-info">
+      <span>{{ 'SCROLL TO EXPLORE' | translate:'اسحب للاستكشاف' }}</span>
+      <div class="scroll-arrow"><span></span></div>
+    </div>
+
+    <div class="hero-index">01 / 07</div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- MARQUEE (two identical groups = seamless loop) -->
+  <!-- ========================================= -->
+  <section class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      @for (group of [1, 2]; track group) {
+        <div class="marquee-group">
+          @for (item of marqueeItems; track item.en) {
+            <span>{{ item.en | translate:item.ar }}</span>
+            <i class="fa-solid fa-star"></i>
+          }
+        </div>
+      }
+    </div>
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 02 INTRO -->
+  <!-- ========================================= -->
+  <section class="intro-section">
+
+    <div #reveal class="section-index reveal">02 / 07</div>
+
+    <div class="intro-layout">
+
+      <div #reveal class="intro-small reveal reveal-delay-one">
+        <span class="red-line"></span>
+        <span>{{ 'WHAT WE DO' | translate:'ماذا نفعل' }}</span>
+      </div>
+
+      <div #reveal class="intro-heading reveal reveal-delay-two">
+        <h2>
+          {{ "WE DON'T JUST" | translate:'لا نكتفي' }}
+          <span>{{ 'CREATE.' | translate:'بالإبداع.' }}</span>
+          <br />
+          {{ 'WE CREATE' | translate:'بل نصنع' }}
+          <strong>{{ 'IMPACT.' | translate:'التأثير.' }}</strong>
+        </h2>
+      </div>
+
+      <div #reveal class="intro-description reveal reveal-delay-three">
+        <p>
+          {{
+            'From the first idea to the final campaign, Benzed X Marketing brings strategy, creativity, technology and execution together.'
+            | translate:'من أول فكرة وحتى إطلاق الحملة، تجمع Benzed X Marketing بين الاستراتيجية والإبداع والتكنولوجيا والتنفيذ في مكان واحد.'
+          }}
+        </p>
+
+        <p>
+          {{
+            'We help brands look better, communicate better and grow faster.'
+            | translate:'نساعد العلامات التجارية على الظهور بشكل أفضل والتواصل بشكل أقوى والنمو بشكل أسرع.'
+          }}
+        </p>
+
+        <a routerLink="/about" class="text-link">
+          <span>{{ 'More about Benzed X Marketing' | translate:'اعرف أكتر عن Benzed X Marketing' }}</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 03 VIDEO SHOWCASE -->
+  <!-- ========================================= -->
+  <section class="video-section">
+
+    <div #reveal class="video-header reveal">
+      <div>
+        <span class="section-kicker">{{ 'SELECTED MOTION' | translate:'مختارات من أعمالنا' }}</span>
+        <h2>
+          {{ 'WATCH' | translate:'شاهد' }}
+          <span>Benzed X Marketing</span>
+          {{ 'IN ACTION.' | translate:'أثناء العمل.' }}
+        </h2>
+      </div>
+
+      <span class="section-index">03 / 07</span>
+    </div>
+
+    <!-- MAIN VIDEO (video 1) -->
+    <div
+      #reveal
+      class="main-video reveal reveal-delay-one video-clickable"
+      role="button"
+      tabindex="0"
+      (click)="openVideoModal('assets/videos/1.mp4', 'Benzed X Marketing — SHOWREEL')"
+      (keydown.enter)="openVideoModal('assets/videos/1.mp4', 'Benzed X Marketing — SHOWREEL')"
+      (keydown.space)="$event.preventDefault(); openVideoModal('assets/videos/1.mp4', 'Benzed X Marketing — SHOWREEL')"
+    >
+
+      <div class="video-placeholder">
+
+        <video
+          #mainVideo
+          #autoVideo
+          class="video-media"
+          src="assets/videos/1.mp4"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+
+        <div class="video-noise"></div>
+
+        <div class="video-placeholder-content">
+          <span class="video-number">{{ 'VIDEO 01' | translate:'فيديو 01' }}</span>
+          <span class="video-label">
+            {{ 'BRAND / CAMPAIGN SHOWREEL' | translate:'شو ريل البراند والحملات' }}
+          </span>
+        </div>
+
+        <button
+          type="button"
+          class="video-sound"
+          (click)="$event.stopPropagation(); toggleSound(mainVideo)"
+          (keydown.enter)="$event.stopPropagation()"
+          (keydown.space)="$event.stopPropagation()"
+          [attr.aria-label]="isMuted ? ('Unmute video' | translate:'تشغيل الصوت') : ('Mute video' | translate:'كتم الصوت')"
+        >
+          <i class="fa-solid" [class.fa-volume-xmark]="isMuted" [class.fa-volume-high]="!isMuted"></i>
+        </button>
+
+      </div>
+
+      <div class="video-overlay-text">Benzed X Marketing — SHOWREEL</div>
+
+    </div>
+
+    <!-- SMALL VIDEOS (videos 2–5) -->
+    <div class="video-grid">
+      @for (v of smallVideos; track v.src) {
+        <div
+          #reveal
+          class="small-video reveal video-clickable"
+          [ngClass]="v.delay"
+          role="button"
+          tabindex="0"
+          [attr.aria-label]="(isArabic ? 'تشغيل ' + v.labelAr : 'Play ' + v.label)"
+          (click)="openVideoModal(v.src, isArabic ? v.ar : v.en)"
+          (keydown.enter)="openVideoModal(v.src, isArabic ? v.ar : v.en)"
+          (keydown.space)="$event.preventDefault(); openVideoModal(v.src, isArabic ? v.ar : v.en)"
+        >
+
+          <div class="video-placeholder" [ngClass]="v.color">
+            <video
+              #autoVideo
+              class="video-media"
+              [src]="v.src"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <span class="video-tag">{{ v.label | translate:v.labelAr }}</span>
+            <i class="fa-solid fa-play video-hover-icon" aria-hidden="true"></i>
+          </div>
+
+          <div class="small-video-info">
+            <span>{{ v.en | translate:v.ar }}</span>
+            <span>{{ v.time }}</span>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 04 SERVICES (auto-moving, pauses on hover) -->
+  <!-- ========================================= -->
+  <section class="home-services">
+
+    <div class="services-top">
+      <div #reveal class="reveal">
+        <span class="section-kicker">{{ 'OUR CAPABILITIES' | translate:'خدماتنا' }}</span>
+        <h2>
+          {{ 'ONE AGENCY.' | translate:'وكالة واحدة.' }}
+          <br />
+          <span>{{ 'MANY WAYS' | translate:'طرق كثيرة' }}</span>
+          {{ 'TO WIN.' | translate:'للنجاح.' }}
+        </h2>
+      </div>
+
+      <span class="section-index">04 / 07</span>
+    </div>
+
+    <div #reveal class="services-viewport reveal">
+      <div class="services-rail">
+
+        @for (s of servicesLoop; track $index) {
+          <article
+            class="service-card"
+            [ngClass]="s.color"
+            [attr.aria-hidden]="$index >= services.length ? 'true' : null"
+          >
+            <div class="service-card-top">
+              <span>{{ s.number }}</span>
+              <i class="fa-solid" [ngClass]="s.icon" aria-hidden="true"></i>
+            </div>
+
+            <div class="service-card-content">
+              <span class="service-mini">{{ s.miniEn | translate:s.miniAr }}</span>
+
+              <h3>
+                {{ s.titleOneEn | translate:s.titleOneAr }}
+                <br />
+                {{ s.titleTwoEn | translate:s.titleTwoAr }}
+              </h3>
+
+              <p>{{ s.descEn | translate:s.descAr }}</p>
+            </div>
+
+            <div class="service-card-arrow">↗</div>
+          </article>
+        }
+
+      </div>
+    </div>
+
+    <div #reveal class="services-more reveal">
+      <a routerLink="/services" class="outline-button">
+        <span>{{ 'Explore all services' | translate:'استكشف كل الخدمات' }}</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 05 WORK -->
+  <!-- ========================================= -->
+  <section class="work-preview">
+
+    <div #reveal class="work-heading reveal">
+      <div>
+        <span class="section-kicker">{{ 'SELECTED WORK' | translate:'أعمال مختارة' }}</span>
+        <h2>
+          {{ 'IDEAS' | translate:'أفكار' }}
+          <span>{{ 'INTO' | translate:'إلى' }}</span>
+          {{ 'IMPACT.' | translate:'تأثير.' }}
+        </h2>
+      </div>
+
+      <span class="section-index">05 / 07</span>
+    </div>
+
+    <div class="work-feature">
+
+      <div #reveal class="work-image reveal">
+        <div class="work-placeholder">
+          <span>{{ 'PROJECT 01' | translate:'مشروع 01' }}</span>
+          <strong>{{ 'CASE STUDY' | translate:'دراسة حالة' }}</strong>
+        </div>
+
+        <div class="work-floating-tag">Benzed X Marketing / 01</div>
+      </div>
+
+      <div #reveal class="work-info reveal reveal-delay-two">
+
+        <span class="project-number">
+          {{ '01 — FEATURED PROJECT' | translate:'01 — مشروع مميز' }}
+        </span>
+
+        <h3>
+          {{ 'YOUR BRAND' | translate:'علامتك التجارية' }}
+          <br />
+          <span>{{ 'DESERVES MORE.' | translate:'تستحق أكثر.' }}</span>
+        </h3>
+
+        <p>
+          {{
+            'A creative campaign combining strategy, visual identity, content and digital execution.'
+            | translate:'حملة إبداعية تجمع بين الاستراتيجية والهوية البصرية والمحتوى والتنفيذ الرقمي.'
+          }}
+        </p>
+
+        <div class="work-meta">
+          <span>{{ 'BRANDING' | translate:'براندينج' }}</span>
+          <span>{{ 'CONTENT' | translate:'محتوى' }}</span>
+          <span>{{ 'CAMPAIGN' | translate:'حملة' }}</span>
+        </div>
+
+        <a routerLink="/work" class="text-link">
+          <span>{{ 'View all work' | translate:'شوف كل أعمالنا' }}</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 06 NUMBERS (count-up) -->
+  <!-- ========================================= -->
+  <section #numbersSection class="numbers-section">
+
+    <div #reveal class="numbers-intro reveal">
+      <span class="section-kicker">{{ 'THE NUMBERS' | translate:'بالأرقام' }}</span>
+
+      <h2>
+        {{ 'CREATIVE' | translate:'طاقة' }}
+        <span>{{ 'ENERGY.' | translate:'إبداعية.' }}</span>
+        {{ 'REAL' | translate:'' }}
+        <strong>{{ 'RESULTS.' | translate:'ونتائج حقيقية.' }}</strong>
+      </h2>
+    </div>
+
+    <div class="numbers-grid">
+      @for (n of stats; track n.en; let i = $index) {
+        <div #reveal class="number-item reveal" [ngClass]="n.delay">
+          <strong dir="ltr">{{ counters()[i] }}<span>{{ n.suffix }}</span></strong>
+          <span>{{ n.en | translate:n.ar }}</span>
+        </div>
+      }
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- 07 FINAL CTA -->
+  <!-- ========================================= -->
+  <section class="final-cta">
+
+    <div class="cta-orbit orbit-one"></div>
+    <div class="cta-orbit orbit-two"></div>
+    <div class="cta-orbit orbit-three"></div>
+
+    <div #reveal class="cta-content reveal">
+
+      <span class="section-kicker">{{ 'READY?' | translate:'جاهز؟' }}</span>
+
+      <h2>
+        {{ "LET'S MAKE" | translate:'يلا نصنع' }}
+        <br />
+        <span>{{ 'SOMETHING' | translate:'شيئًا' }}</span>
+        <br />
+        {{ 'UNFORGETTABLE.' | translate:'لا يُنسى.' }}
+      </h2>
+
+      <a routerLink="/contact" class="final-cta-button">
+        <span>{{ 'Start your project' | translate:'ابدأ مشروعك' }}</span>
+        <span>
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </span>
+      </a>
+
+    </div>
+
+    <span class="final-index">07 / 07</span>
+
+  </section>
+
+
+
+  <!-- VIDEO LIGHTBOX -->
+  @if (isVideoModalOpen) {
+    <div
+      class="video-lightbox"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="activeVideoTitle"
+      (click)="closeVideoModal()"
+    >
+      <div class="video-lightbox-backdrop"></div>
+
+      <div #lightboxPanel tabindex="-1" class="video-lightbox-panel" (click)="stopModalClick($event)">
+        <div class="video-lightbox-topbar">
+          <div class="video-lightbox-heading">
+            <span class="video-lightbox-kicker">Benzed X Marketing / {{ 'MOTION' | translate:'فيديو' }}</span>
+            <h2>{{ activeVideoTitle }}</h2>
+          </div>
+
+          <button
+            type="button"
+            class="video-lightbox-close"
+            [attr.aria-label]="'Close video' | translate:'إغلاق الفيديو'"
+            (click)="closeVideoModal()"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="video-lightbox-screen">
+          <video
+            class="video-lightbox-player"
+            [src]="activeVideoSrc"
+            controls
+            autoplay
+            playsinline
+            preload="auto"
+          ></video>
+          <div class="video-lightbox-corner video-lightbox-corner-tl"></div>
+          <div class="video-lightbox-corner video-lightbox-corner-br"></div>
+        </div>
+
+        <div class="video-lightbox-footer">
+          <span><i class="fa-solid fa-circle-play" aria-hidden="true"></i> {{ 'Now playing' | translate:'يعمل الآن' }}</span>
+          <span dir="ltr">Benzed X Marketing © {{ currentYear }}</span>
+        </div>
+      </div>
+    </div>
+  }
+
+</main>
