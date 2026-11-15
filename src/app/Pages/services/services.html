@@ -1,0 +1,628 @@
+<!-- ========================================= -->
+<!-- SERVICES PAGE -->
+<!-- ========================================= -->
+
+<main
+  class="services-page"
+  [class.is-rtl]="isArabic"
+
+  (mousemove)="onMouseMove($event)"
+
+  (mouseleave)="resetParallax()"
+
+  (window:scroll)="onWindowScroll()"
+>
+
+
+  <!-- ========================================= -->
+  <!-- SCROLL PROGRESS -->
+  <!-- ========================================= -->
+
+  <div
+    class="scroll-progress"
+    aria-hidden="true"
+    [style.--scroll-progress]="scrollProgress"
+  ></div>
+
+
+  <!-- ========================================= -->
+  <!-- HERO
+       (the mouse variables live here so BOTH the 3D scene
+        and the hero content inherit them) -->
+  <!-- ========================================= -->
+
+  <section
+    class="services-hero"
+    [style.--mouse-x]="mouseX"
+    [style.--mouse-y]="mouseY"
+  >
+
+
+    <!-- BACKGROUND -->
+
+    <div class="services-grid" aria-hidden="true"></div>
+
+    <div class="services-noise" aria-hidden="true"></div>
+
+    <div class="services-glow services-glow-red" aria-hidden="true"></div>
+
+    <div class="services-glow services-glow-pink" aria-hidden="true"></div>
+
+    <div class="services-glow services-glow-orange" aria-hidden="true"></div>
+
+
+    <!-- ===================================== -->
+    <!-- 3D OBJECT -->
+    <!-- ===================================== -->
+
+    <div class="services-3d-scene" aria-hidden="true">
+
+      <div class="services-orb">
+
+        <div class="services-orb-ring ring-one"></div>
+
+        <div class="services-orb-ring ring-two"></div>
+
+        <div class="services-orb-ring ring-three"></div>
+
+        <div class="services-orb-core"></div>
+
+      </div>
+
+
+      <div class="services-floating-shape shape-one"></div>
+
+      <div class="services-floating-shape shape-two"></div>
+
+      <div class="services-floating-shape shape-three"></div>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- HERO CONTENT -->
+    <!-- ===================================== -->
+
+    <div class="services-hero-content">
+
+
+      <div class="services-eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        <span>
+          {{ 'OUR CAPABILITIES' | translate:'خدماتنا' }}
+        </span>
+
+        <span class="eyebrow-line"></span>
+
+        <span class="eyebrow-index">
+          01 / 08
+        </span>
+
+      </div>
+
+
+      <h1 class="services-title">
+
+        {{ 'WE BUILD' | translate:'نصنع' }}
+
+        <span>
+          {{ 'BRANDS' | translate:'علامات تجارية' }}
+        </span>
+
+        {{ 'THAT MOVE.' | translate:'تترك تأثيرًا.' }}
+
+      </h1>
+
+
+      <p class="services-hero-description">
+
+        {{
+          'From strategy and content to media buying, branding and technology — we build everything your brand needs to grow.'
+          | translate:'من الاستراتيجية وصناعة المحتوى إلى الميديا باينج والبراندينج والتكنولوجيا — بنوفر كل ما تحتاجه علامتك التجارية للنمو.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="services-hero-button"
+      >
+
+        <span>
+          {{ 'Start a project' | translate:'ابدأ مشروعك' }}
+        </span>
+
+        <span class="button-icon">
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            aria-hidden="true"
+          ></i>
+
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="services-scroll">
+
+      <span>
+        {{ 'EXPLORE SERVICES' | translate:'استكشف الخدمات' }}
+      </span>
+
+      <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- INTRO -->
+  <!-- ========================================= -->
+
+  <section class="services-intro">
+
+
+    <div
+      #reveal
+      class="section-number reveal"
+    >
+      02 / 08
+    </div>
+
+
+    <div class="services-intro-layout">
+
+
+      <div
+        #reveal
+        class="intro-label reveal"
+      >
+
+        <span></span>
+
+        {{
+          'WHAT WE DO'
+          | translate:'ماذا نقدم'
+        }}
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-title reveal reveal-delay-one"
+      >
+
+        <h2>
+
+          {{
+            'ONE TEAM.'
+            | translate:'فريق واحد.'
+          }}
+
+          <br />
+
+          {{
+            'EVERYTHING'
+            | translate:'كل ما'
+          }}
+
+          <span>
+            {{
+              'YOU NEED.'
+              | translate:'تحتاجه.'
+            }}
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="intro-text reveal reveal-delay-two"
+      >
+
+        <p>
+
+          {{
+            'Benzed combines creativity, strategy, technology and performance under one roof.'
+            | translate:'تجمع Benzed بين الإبداع والاستراتيجية والتكنولوجيا والأداء في مكان واحد.'
+          }}
+
+        </p>
+
+
+        <p>
+
+          {{
+            'We do not just deliver services. We build complete digital experiences around your brand.'
+            | translate:'نحن لا نقدم خدمات منفصلة فقط، بل نبني تجربة رقمية متكاملة حول علامتك التجارية.'
+          }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- SERVICES LIST -->
+  <!-- ========================================= -->
+
+  <section class="services-list">
+
+
+    <div class="services-list-header">
+
+      <div
+        #reveal
+        class="reveal"
+      >
+
+        <span class="section-kicker">
+
+          {{
+            'WHAT WE OFFER'
+            | translate:'ماذا نقدم'
+          }}
+
+        </span>
+
+        <h2>
+
+          {{
+            'OUR'
+            | translate:'خدماتنا'
+          }}
+
+          <span>
+            {{
+              'SERVICES.'
+              | translate:'بكل تفاصيلها.'
+            }}
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <span class="section-number">
+        03 / 08
+      </span>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- SERVICES 01 → 08 (data lives in services.ts) -->
+    <!-- ===================================== -->
+
+    @for (s of services; track s.number) {
+
+      <article
+        #reveal
+        class="big-service reveal"
+        [class]="s.color + ' ' + s.delay"
+      >
+
+        <!-- soft colored glow that appears on hover -->
+        <span class="service-gradient" aria-hidden="true"></span>
+
+
+        <div class="service-number">
+          {{ s.number }}
+        </div>
+
+
+        <div class="service-icon">
+
+          <i class="fa-solid" [class]="s.icon" aria-hidden="true"></i>
+
+        </div>
+
+
+        <div class="service-main">
+
+          <span class="service-category">
+            {{ s.catEn | translate:s.catAr }}
+          </span>
+
+          <h3>
+
+            {{ s.titleOneEn | translate:s.titleOneAr }}
+
+            @if (s.titleTwoEn) {
+
+              <br />
+
+              {{ s.titleTwoEn | translate:s.titleTwoAr! }}
+
+            }
+
+          </h3>
+
+          <p>
+
+            {{ s.descEn | translate:s.descAr }}
+
+          </p>
+
+
+          <div class="service-tags">
+
+            @for (tag of s.tags; track tag.en) {
+
+              <span>
+                {{ tag.en | translate:tag.ar }}
+              </span>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="service-arrow" aria-hidden="true">
+          ↗
+        </div>
+
+      </article>
+
+    }
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- PROCESS -->
+  <!-- ========================================= -->
+
+  <section class="services-process">
+
+
+    <div
+      #reveal
+      class="process-heading reveal"
+    >
+
+      <span class="section-kicker">
+
+        {{
+          'HOW WE WORK'
+          | translate:'طريقة شغلنا'
+        }}
+
+      </span>
+
+      <h2>
+
+        {{
+          'IDEA'
+          | translate:'فكرة'
+        }}
+
+        <span>→</span>
+
+        {{
+          'STRATEGY'
+          | translate:'استراتيجية'
+        }}
+
+        <span>→</span>
+
+        {{
+          'IMPACT'
+          | translate:'تأثير'
+        }}
+
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+      <div
+        #reveal
+        class="process-item reveal"
+      >
+
+        <span class="process-item-number">
+          01
+        </span>
+
+        <i class="fa-solid fa-lightbulb process-item-icon" aria-hidden="true"></i>
+
+        <h3>
+          {{ 'DISCOVER' | translate:'اكتشف' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We understand your business, audience and goals.'
+            | translate:'نفهم البيزنس والجمهور والأهداف.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-one"
+      >
+
+        <span class="process-item-number">
+          02
+        </span>
+
+        <i class="fa-solid fa-chess process-item-icon" aria-hidden="true"></i>
+
+        <h3>
+          {{ 'STRATEGIZE' | translate:'نخطط' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We build the strategy and creative direction.'
+            | translate:'نبني الاستراتيجية والاتجاه الإبداعي.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-two"
+      >
+
+        <span class="process-item-number">
+          03
+        </span>
+
+        <i class="fa-solid fa-wand-magic-sparkles process-item-icon" aria-hidden="true"></i>
+
+        <h3>
+          {{ 'CREATE' | translate:'نبدع' }}
+        </h3>
+
+        <p>
+
+          {{
+            'Our team turns the strategy into powerful creative work.'
+            | translate:'فريقنا يحول الاستراتيجية إلى أعمال إبداعية قوية.'
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div
+        #reveal
+        class="process-item reveal reveal-delay-three"
+      >
+
+        <span class="process-item-number">
+          04
+        </span>
+
+        <i class="fa-solid fa-chart-line process-item-icon" aria-hidden="true"></i>
+
+        <h3>
+          {{ 'GROW' | translate:'ننمو' }}
+        </h3>
+
+        <p>
+
+          {{
+            'We measure, optimize and keep pushing the results.'
+            | translate:'نقيس ونطور ونستمر في تحسين النتائج.'
+          }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- CTA -->
+  <!-- ========================================= -->
+
+  <section class="services-cta">
+
+
+    <div class="cta-glow" aria-hidden="true"></div>
+
+    <div class="cta-ring ring-one" aria-hidden="true"></div>
+
+    <div class="cta-ring ring-two" aria-hidden="true"></div>
+
+
+    <div
+      #reveal
+      class="cta-content reveal"
+    >
+
+      <span class="section-kicker">
+        {{ 'READY?' | translate:'جاهز؟' }}
+      </span>
+
+
+      <h2>
+
+        {{
+          'LET’S BUILD'
+          | translate:'يلا نبني'
+        }}
+
+        <span>
+          {{
+            'SOMETHING BIG.'
+            | translate:'حاجة كبيرة.'
+          }}
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        {{
+          'Tell us about your idea and let’s turn it into something people remember.'
+          | translate:'احكيلنا عن فكرتك ونحولها معًا إلى شيء الناس تفتكره.'
+        }}
+
+      </p>
+
+
+      <a
+        routerLink="/contact"
+        class="cta-button"
+      >
+
+        <span>
+          {{ 'Start a project' | translate:'ابدأ مشروعك' }}
+        </span>
+
+        <i
+          class="fa-solid fa-arrow-up-right-from-square"
+          aria-hidden="true"
+        ></i>
+
+      </a>
+
+    </div>
+
+
+    <span class="cta-index" aria-hidden="true">
+      08 / 08
+    </span>
+
+  </section>
+
+</main>
